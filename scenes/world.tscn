@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cd78fk6kiow6f"]
+[gd_scene load_steps=70 format=3 uid="uid://cd78fk6kiow6f"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_0qqsj"]
 [ext_resource type="PackedScene" uid="uid://dpujwin8t0kqa" path="res://scenes/camera_rig.tscn" id="1_6oawf"]
@@ -34,7 +34,18 @@
 [ext_resource type="PackedScene" uid="uid://ciycjy2c17bia" path="res://assets/room_models/kitchenSink.glb" id="27_ssww3"]
 [ext_resource type="Texture2D" uid="uid://8lfykhgqeslt" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_rectangle_flat.png" id="28_m2bob"]
 [ext_resource type="Texture2D" uid="uid://bwer1o7ngggja" path="res://assets/characters/avatars/avatar1-test.png" id="29_i7bpi"]
+[ext_resource type="PackedScene" uid="uid://cqbwsxrqmv87i" path="res://assets/room_models/kitchenBlender.glb" id="29_lu18e"]
+[ext_resource type="PackedScene" uid="uid://brq7fgh6i1yp8" path="res://assets/room_models/kitchenMicrowave.glb" id="30_aq8b4"]
 [ext_resource type="Texture2D" uid="uid://bptve1e5glwwx" path="res://assets/characters/avatars/avatar2-test.png" id="30_i16rx"]
+[ext_resource type="PackedScene" uid="uid://delem1y7yeo5c" path="res://assets/room_models/kitchenCoffeeMachine.glb" id="31_j5t7l"]
+[ext_resource type="PackedScene" uid="uid://cp0ggn618jptg" path="res://assets/room_models/washerDryerStacked.glb" id="32_bwsh3"]
+[ext_resource type="PackedScene" uid="uid://dmoypclok2fok" path="res://assets/room_models/toaster.glb" id="40_i5v2o"]
+[ext_resource type="PackedScene" uid="uid://tekn1mxtxoyh" path="res://assets/room_models/kitchenCabinetDrawer.glb" id="41_jw6qx"]
+[ext_resource type="PackedScene" uid="uid://cv1mv1ucwp7ay" path="res://assets/room_models/kitchenCabinetUpper.glb" id="42_p3oll"]
+[ext_resource type="PackedScene" uid="uid://bbf1i7ektajeh" path="res://assets/room_models/kitchenCabinetUpperDouble.glb" id="43_4trqx"]
+[ext_resource type="PackedScene" uid="uid://ben8k04gutwrp" path="res://assets/room_models/kitchenCabinetUpperLow.glb" id="44_mhhh1"]
+[ext_resource type="PackedScene" uid="uid://bv1mldwfwrb64" path="res://assets/room_models/hoodLarge.glb" id="45_23goa"]
+[ext_resource type="PackedScene" uid="uid://b0p4ql8va47c0" path="res://assets/room_models/kitchenCabinetUpperCorner.glb" id="46_jywy8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sikn3"]
 
@@ -120,6 +131,13 @@ environment = SubResource("Environment_trb3a")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.854, 2, -1.666)
+light_color = Color(1, 1, 0.686275, 1)
+light_energy = 0.515
+light_specular = 0.0
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64424, 2, 1.56313)
 light_color = Color(1, 1, 0.686275, 1)
 light_energy = 0.515
 light_specular = 0.0
@@ -297,17 +315,105 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.426
 [node name="kitchenCabinetCornerRound" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("23_opqa1")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.31128, 0, 0.026819)
 
-[node name="kitchenFridgeLarge" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("24_hsa40")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.470916, 2.38419e-07, -0.822385)
-
 [node name="kitchenStove" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("25_r8pph")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.00311309, 0, 0.0259266)
 
 [node name="kitchenCabinet" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("26_4gr6g")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.43322, 0, 0.0264528)
 
+[node name="kitchenCabinet2" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("26_4gr6g")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.437131, 0, 0.0274692)
+
 [node name="kitchenSink" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("27_ssww3")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.861596, 0, 0.0259123)
+
+[node name="kitchenCabinetDrawer" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("41_jw6qx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.437281, -4.76837e-07, -0.403373)
+
+[node name="WallUnits" type="Node3D" parent="Map/House/Kitchen"]
+
+[node name="kitchenCabinetUpper" parent="Map/House/Kitchen/WallUnits" instance=ExtResource("42_p3oll")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.74096, 0.8, 1.62574)
+
+[node name="kitchenCabinetUpper(Clone)" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpper" index="0"]
+layers = 2
+
+[node name="door" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpper/kitchenCabinetUpper(Clone)" index="0"]
+layers = 2
+
+[node name="kitchenCabinetUpperDouble" parent="Map/House/Kitchen/WallUnits" instance=ExtResource("43_4trqx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.74112, 0.8, 1.1953)
+
+[node name="kitchenCabinetUpperDouble(Clone)" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble" index="0"]
+layers = 2
+
+[node name="doorLeft" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble/kitchenCabinetUpperDouble(Clone)" index="0"]
+layers = 2
+
+[node name="doorRight" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble/kitchenCabinetUpperDouble(Clone)" index="1"]
+layers = 2
+
+[node name="kitchenCabinetUpperDouble2" parent="Map/House/Kitchen/WallUnits" instance=ExtResource("43_4trqx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.50092, 0.8, 2.73868)
+
+[node name="kitchenCabinetUpperDouble(Clone)" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble2" index="0"]
+layers = 2
+
+[node name="doorLeft" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble2/kitchenCabinetUpperDouble(Clone)" index="0"]
+layers = 2
+
+[node name="doorRight" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble2/kitchenCabinetUpperDouble(Clone)" index="1"]
+layers = 2
+
+[node name="kitchenCabinetUpperLow" parent="Map/House/Kitchen/WallUnits" instance=ExtResource("44_mhhh1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.07103, 0.8, 2.7379)
+
+[node name="kitchenCabinetUpperLow(Clone)" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperLow" index="0"]
+layers = 2
+
+[node name="door" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperLow/kitchenCabinetUpperLow(Clone)" index="0"]
+layers = 2
+
+[node name="kitchenCabinetUpperCorner" parent="Map/House/Kitchen/WallUnits" instance=ExtResource("46_jywy8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.74188, 0.8, 0.979566)
+
+[node name="kitchenCabinetUpperCorner(Clone)" parent="Map/House/Kitchen/WallUnits/kitchenCabinetUpperCorner" index="0"]
+layers = 2
+
+[node name="Appliances" type="Node3D" parent="Map/House/Kitchen"]
+
+[node name="toaster" parent="Map/House/Kitchen/Appliances" instance=ExtResource("40_i5v2o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.84974, 0.413264, 1.94583)
+
+[node name="hoodLarge" parent="Map/House/Kitchen/Appliances" instance=ExtResource("45_23goa")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.66449, 0.9, 2.05568)
+
+[node name="hoodLarge(Clone)" parent="Map/House/Kitchen/Appliances/hoodLarge" index="0"]
+layers = 2
+
+[node name="kitchenFridgeLarge" parent="Map/House/Kitchen/Appliances" instance=ExtResource("24_hsa40")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.63361, 2.38419e-07, 2.58409)
+
+[node name="kitchenBlender" parent="Map/House/Kitchen/Appliances" instance=ExtResource("29_lu18e")]
+transform = Transform3D(0.872905, 0, 0.48789, 0, 1, 0, -0.48789, 0, 0.872905, 1.44615, 0.912726, 2.75977)
+
+[node name="kitchenBlender(Clone)" parent="Map/House/Kitchen/Appliances/kitchenBlender" index="0"]
+layers = 2
+
+[node name="blenderCup" parent="Map/House/Kitchen/Appliances/kitchenBlender/kitchenBlender(Clone)" index="0"]
+layers = 2
+
+[node name="blenderTop" parent="Map/House/Kitchen/Appliances/kitchenBlender/kitchenBlender(Clone)" index="1"]
+layers = 2
+
+[node name="kitchenMicrowave" parent="Map/House/Kitchen/Appliances" instance=ExtResource("30_aq8b4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.99454, 0.414374, 2.69739)
+
+[node name="kitchenCoffeeMachine" parent="Map/House/Kitchen/Appliances" instance=ExtResource("31_j5t7l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.66276, 0.417489, 0.921341)
+
+[node name="washerDryerStacked" parent="Map/House/Kitchen/Appliances" instance=ExtResource("32_bwsh3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.1086, 0, 2.56189)
 
 [node name="Bedroom" type="Node3D" parent="Map/House"]
 
@@ -467,3 +573,10 @@ texture = ExtResource("30_i16rx")
 [editable path="Map/House/LivingRoom/Build/wallWindow4"]
 [editable path="Map/House/LivingRoom/Furniture/loungeDesignSofaCorner"]
 [editable path="Map/House/Office/bookcaseOpen"]
+[editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpper"]
+[editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble"]
+[editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble2"]
+[editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpperLow"]
+[editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpperCorner"]
+[editable path="Map/House/Kitchen/Appliances/hoodLarge"]
+[editable path="Map/House/Kitchen/Appliances/kitchenBlender"]
