@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhxjqjwngrwv7"]
+
+[ext_resource type="PackedScene" uid="uid://cfotpqofdsgbm" path="res://assets/room_models/chairDesk.glb" id="1_g77x1"]
+[ext_resource type="Script" path="res://scripts/chair_desk_mod.gd" id="2_18vpj"]
+
+[node name="chairDesk" instance=ExtResource("1_g77x1")]
+script = ExtResource("2_18vpj")
+
+[node name="StaticBody3D" parent="chairDesk(Clone)" index="1" groups=["desk"]]
+
+[node name="SitPoint" type="Node3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.170399, 0.23842, -0.139166)
+
+[node name="LookPoint" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.171552, 0.530626, 0.683046)

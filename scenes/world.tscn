@@ -1,0 +1,469 @@
+[gd_scene load_steps=59 format=3 uid="uid://cd78fk6kiow6f"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_0qqsj"]
+[ext_resource type="PackedScene" uid="uid://dpujwin8t0kqa" path="res://scenes/camera_rig.tscn" id="1_6oawf"]
+[ext_resource type="Material" uid="uid://oeuve54nv610" path="res://assets/materials/floor-basic.tres" id="1_cyq4a"]
+[ext_resource type="PackedScene" uid="uid://di2duq76w57ur" path="res://assets/room_models/wall.glb" id="2_luktd"]
+[ext_resource type="PackedScene" uid="uid://cgflnv62boig0" path="res://assets/room_models/wallCornerRond.glb" id="3_60vxv"]
+[ext_resource type="PackedScene" uid="uid://cb3nfwtrmohjy" path="res://scenes/player.tscn" id="4_3l3i5"]
+[ext_resource type="Texture2D" uid="uid://chgheajp4i5t1" path="res://assets/textures/Light/texture_01.png" id="4_6wrbo"]
+[ext_resource type="PackedScene" uid="uid://bk5aoiwiqdpo2" path="res://assets/room_models/wallDoorwayWide.glb" id="4_wq8yq"]
+[ext_resource type="Texture2D" uid="uid://bi6wsdr81soo3" path="res://assets/textures/Light/texture_02.png" id="5_233s7"]
+[ext_resource type="PackedScene" uid="uid://dlpthvumymd5u" path="res://assets/room_models/wallWindow.glb" id="5_y7wkh"]
+[ext_resource type="PackedScene" uid="uid://ph5kfcjb5udm" path="res://assets/room_models/deskCorner.glb" id="6_eyjua"]
+[ext_resource type="PackedScene" uid="uid://c3j4wb5hfbuv0" path="res://assets/room_models/books.glb" id="6_odqys"]
+[ext_resource type="PackedScene" uid="uid://b4c4eevmmo7d3" path="res://assets/room_models/computerMouse.glb" id="10_odjgi"]
+[ext_resource type="PackedScene" uid="uid://cnqtb6jfny040" path="res://assets/room_models/tableCoffee.glb" id="11_nmpnd"]
+[ext_resource type="PackedScene" uid="uid://c5hl5tf6r8ibt" path="res://assets/room_models/computerScreen.glb" id="11_ooen7"]
+[ext_resource type="PackedScene" uid="uid://billflhxboay" path="res://assets/room_models/computerKeyboard.glb" id="12_6jrpb"]
+[ext_resource type="PackedScene" uid="uid://trw64iy8py8p" path="res://assets/room_models/pottedPlant.glb" id="12_j1m76"]
+[ext_resource type="PackedScene" uid="uid://dwy5rm40y6g2s" path="res://assets/room_models/cabinetTelevision.glb" id="12_j2o4v"]
+[ext_resource type="PackedScene" uid="uid://dqybvioicdbbe" path="res://assets/room_models/televisionModern.glb" id="12_mte70"]
+[ext_resource type="PackedScene" uid="uid://ds0pr4bcapx26" path="res://assets/room_models/loungeDesignSofaCorner.glb" id="12_xuqvp"]
+[ext_resource type="PackedScene" uid="uid://rsm766fw8clp" path="res://assets/room_models/loungeDesignChair.glb" id="13_lo14b"]
+[ext_resource type="PackedScene" uid="uid://ckx0g4oueixuv" path="res://assets/room_models/bookcaseOpen.glb" id="14_vqx2s"]
+[ext_resource type="PackedScene" uid="uid://bhxjqjwngrwv7" path="res://scenes/chair_desk_mod.tscn" id="22_60thx"]
+[ext_resource type="PackedScene" uid="uid://6wvyr3kddkdt" path="res://assets/room_models/kitchenCabinetCornerRound.glb" id="23_opqa1"]
+[ext_resource type="PackedScene" uid="uid://vehxfd5jhi33" path="res://assets/room_models/kitchenCabinetCornerInner.glb" id="23_pelht"]
+[ext_resource type="PackedScene" uid="uid://dljqtibi2lkq5" path="res://assets/room_models/kitchenFridgeLarge.glb" id="24_hsa40"]
+[ext_resource type="Texture2D" uid="uid://bqasefgndnk1b" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_flat.png" id="25_23dnm"]
+[ext_resource type="PackedScene" uid="uid://dmuwre61qmsev" path="res://assets/room_models/kitchenStove.glb" id="25_r8pph"]
+[ext_resource type="PackedScene" uid="uid://ce5kdwk3xalj7" path="res://assets/room_models/kitchenCabinet.glb" id="26_4gr6g"]
+[ext_resource type="Texture2D" uid="uid://dknlb33divvli" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_line.png" id="26_jq22q"]
+[ext_resource type="FontFile" uid="uid://py6grmo4qw27" path="res://assets/fonts/Kenney Future Narrow.ttf" id="26_nqrvb"]
+[ext_resource type="PackedScene" uid="uid://ciycjy2c17bia" path="res://assets/room_models/kitchenSink.glb" id="27_ssww3"]
+[ext_resource type="Texture2D" uid="uid://8lfykhgqeslt" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_rectangle_flat.png" id="28_m2bob"]
+[ext_resource type="Texture2D" uid="uid://bwer1o7ngggja" path="res://assets/characters/avatars/avatar1-test.png" id="29_i7bpi"]
+[ext_resource type="Texture2D" uid="uid://bptve1e5glwwx" path="res://assets/characters/avatars/avatar2-test.png" id="30_i16rx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sikn3"]
+
+[sub_resource type="Sky" id="Sky_e2qj5"]
+sky_material = SubResource("ProceduralSkyMaterial_sikn3")
+
+[sub_resource type="Environment" id="Environment_trb3a"]
+background_mode = 2
+sky = SubResource("Sky_e2qj5")
+ambient_light_source = 3
+tonemap_mode = 3
+adjustment_enabled = true
+adjustment_contrast = 1.17
+adjustment_saturation = 0.92
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc33k"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7voj"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ws0rn"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27mu1"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxoo8"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovchi"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrh2b"]
+albedo_texture = ExtResource("5_233s7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3iyx"]
+albedo_texture = ExtResource("5_233s7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkxmr"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kt6m"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkved"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhj5e"]
+albedo_texture = ExtResource("5_233s7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxvwt"]
+albedo_texture = ExtResource("5_233s7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56gnk"]
+albedo_texture = ExtResource("5_233s7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3rpd"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mc1ju"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twbg5"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e84ah"]
+albedo_texture = ExtResource("5_233s7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2lxj"]
+albedo_texture = ExtResource("5_233s7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjdpt"]
+albedo_texture = ExtResource("5_233s7")
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_0qqsj")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_trb3a")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.854, 2, -1.666)
+light_color = Color(1, 1, 0.686275, 1)
+light_energy = 0.515
+light_specular = 0.0
+shadow_enabled = true
+
+[node name="CameraRig" parent="." instance=ExtResource("1_6oawf")]
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="House" type="Node3D" parent="Map"]
+
+[node name="LivingRoom" type="Node3D" parent="Map/House"]
+
+[node name="Build" type="Node3D" parent="Map/House/LivingRoom"]
+
+[node name="Floor" type="CSGBox3D" parent="Map/House/LivingRoom/Build"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = ExtResource("1_cyq4a")
+use_collision = true
+size = Vector3(6, 1, 6)
+
+[node name="wall" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, -2.50856, 0, 3.00129)
+
+[node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall" index="0"]
+layers = 2
+
+[node name="wall2" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95192, 0, 0.466218)
+
+[node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hc33k")
+surface_material_override/1 = SubResource("StandardMaterial3D_n7voj")
+
+[node name="wallCornerRond" parent="Map/House/LivingRoom/Build" instance=ExtResource("3_60vxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45362, 0, 3.00249)
+
+[node name="wallCornerRond(Clone)" parent="Map/House/LivingRoom/Build/wallCornerRond" index="0"]
+layers = 2
+
+[node name="wallCornerRond3" parent="Map/House/LivingRoom/Build" instance=ExtResource("3_60vxv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.00124, 0, -2.45101)
+
+[node name="wallCornerRond(Clone)" parent="Map/House/LivingRoom/Build/wallCornerRond3" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ws0rn")
+surface_material_override/1 = SubResource("StandardMaterial3D_27mu1")
+surface_material_override/2 = SubResource("StandardMaterial3D_gxoo8")
+
+[node name="wallCornerRond4" parent="Map/House/LivingRoom/Build" instance=ExtResource("3_60vxv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.45293, 0, -3.00221)
+
+[node name="wallCornerRond(Clone)" parent="Map/House/LivingRoom/Build/wallCornerRond4" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ovchi")
+surface_material_override/1 = SubResource("StandardMaterial3D_nrh2b")
+surface_material_override/2 = SubResource("StandardMaterial3D_d3iyx")
+
+[node name="wallCornerRond2" parent="Map/House/LivingRoom/Build" instance=ExtResource("3_60vxv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.0016, 0, 2.45045)
+
+[node name="wallCornerRond(Clone)" parent="Map/House/LivingRoom/Build/wallCornerRond2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bkxmr")
+surface_material_override/1 = SubResource("StandardMaterial3D_8kt6m")
+surface_material_override/2 = SubResource("StandardMaterial3D_hkved")
+
+[node name="wall5" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -2, 0, 2.98023e-08, 3.0029, 0, 2.47158)
+
+[node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall5" index="0"]
+layers = 2
+
+[node name="wall6" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -2, 0, 2.98023e-08, 3.00234, 0, -0.467514)
+
+[node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall6" index="0"]
+layers = 2
+
+[node name="wallDoorwayWide3" parent="Map/House/LivingRoom/Build" instance=ExtResource("4_wq8yq")]
+transform = Transform3D(-1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 2.95376, 0, -0.507521)
+
+[node name="wallDoorwayWide(Clone)" parent="Map/House/LivingRoom/Build/wallDoorwayWide3" index="0"]
+layers = 2
+
+[node name="wallWindow" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, -2.95211, 0, -0.460153)
+
+[node name="wallWindow(Clone)" parent="Map/House/LivingRoom/Build/wallWindow" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hhj5e")
+surface_material_override/1 = SubResource("StandardMaterial3D_kxvwt")
+surface_material_override/2 = SubResource("StandardMaterial3D_56gnk")
+
+[node name="wallWindow2" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, -2.95185, 0, 2.45192)
+
+[node name="wallWindow(Clone)" parent="Map/House/LivingRoom/Build/wallWindow2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o3rpd")
+surface_material_override/1 = SubResource("StandardMaterial3D_mc1ju")
+surface_material_override/2 = SubResource("StandardMaterial3D_twbg5")
+
+[node name="wall3" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.465499, 0, -2.95103)
+
+[node name="wallWindow3" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0.460872, 0, -2.95159)
+
+[node name="wallWindow4" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -2.45591, 0, -2.95083)
+
+[node name="wallWindow(Clone)" parent="Map/House/LivingRoom/Build/wallWindow4" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_e84ah")
+surface_material_override/1 = SubResource("StandardMaterial3D_h2lxj")
+surface_material_override/2 = SubResource("StandardMaterial3D_wjdpt")
+
+[node name="Furniture" type="Node3D" parent="Map/House/LivingRoom"]
+
+[node name="tableCoffee" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("11_nmpnd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.53728, 0, -1.60225)
+
+[node name="cabinetTelevision" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("12_j2o4v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.64953, -0.0689205, -2.12978)
+
+[node name="televisionModern" parent="Map/House/LivingRoom/Furniture/cabinetTelevision" instance=ExtResource("12_mte70")]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0.387293, 0.307297, -0.141624)
+
+[node name="loungeDesignSofaCorner" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("12_xuqvp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1196, 0, -1.55447)
+
+[node name="loungeDesignChair" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("13_lo14b")]
+transform = Transform3D(-0.610601, 0, 0.791938, 0, 1, 0, -0.791938, 0, -0.610601, 0.748124, 0, -0.626338)
+
+[node name="Office" type="Node3D" parent="Map/House"]
+
+[node name="bookcaseOpen" parent="Map/House/Office" groups=["bookcase"] instance=ExtResource("14_vqx2s")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.63042, 0, -0.358673)
+
+[node name="StaticBody3D" parent="Map/House/Office/bookcaseOpen/bookcaseOpen(Clone)" index="0" groups=["bookcase"]]
+
+[node name="books" parent="Map/House/Office/bookcaseOpen" instance=ExtResource("6_odqys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.064757, 0.625815, -0.0750501)
+
+[node name="books2" parent="Map/House/Office/bookcaseOpen" instance=ExtResource("6_odqys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18033, 0.378102, -0.0750501)
+
+[node name="books3" parent="Map/House/Office/bookcaseOpen" instance=ExtResource("6_odqys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134387, 0.135826, -0.0750501)
+
+[node name="deskCorner" parent="Map/House/Office" groups=["desk"] instance=ExtResource("6_eyjua")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94299, -4.76837e-07, -1.92233)
+
+[node name="chairDesk" parent="Map/House/Office/deskCorner" instance=ExtResource("22_60thx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.401367, 0, -0.14402)
+
+[node name="computerMouse" parent="Map/House/Office/deskCorner" groups=["desk"] instance=ExtResource("10_odjgi")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.705847, 0.402675, -0.0824078)
+
+[node name="computerScreen" parent="Map/House/Office/deskCorner" groups=["desk"] instance=ExtResource("11_ooen7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.85606, 0.418849, -0.516142)
+
+[node name="computerKeyboard" parent="Map/House/Office/deskCorner" groups=["desk"] instance=ExtResource("12_6jrpb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.650022, 0.415447, -0.468182)
+
+[node name="pottedPlant" parent="Map/House/Office/deskCorner" groups=["desk"] instance=ExtResource("12_j1m76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.732574, 0.385449, -0.77313)
+
+[node name="books4" parent="Map/House/Office" instance=ExtResource("6_odqys")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.78275, 0.388957, -2.19337)
+
+[node name="Kitchen" type="Node3D" parent="Map/House"]
+
+[node name="BaseUnits" type="Node3D" parent="Map/House/Kitchen"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.47368, 0, 2.05895)
+
+[node name="kitchenCabinetCornerInner" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("23_pelht")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.426532, 0, 0.0273936)
+
+[node name="kitchenCabinetCornerRound" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("23_opqa1")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.31128, 0, 0.026819)
+
+[node name="kitchenFridgeLarge" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("24_hsa40")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.470916, 2.38419e-07, -0.822385)
+
+[node name="kitchenStove" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("25_r8pph")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.00311309, 0, 0.0259266)
+
+[node name="kitchenCabinet" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("26_4gr6g")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.43322, 0, 0.0264528)
+
+[node name="kitchenSink" parent="Map/House/Kitchen/BaseUnits" instance=ExtResource("27_ssww3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.861596, 0, 0.0259123)
+
+[node name="Bedroom" type="Node3D" parent="Map/House"]
+
+[node name="Toilet" type="Node3D" parent="Map/House"]
+
+[node name="Player" parent="." instance=ExtResource("4_3l3i5")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.70135, 0.132454, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ActionUI" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ActionButton1" type="TextureButton" parent="UI/ActionUI"]
+self_modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 525.0
+offset_top = 328.0
+offset_right = 589.0
+offset_bottom = 392.0
+texture_normal = ExtResource("25_23dnm")
+texture_pressed = ExtResource("26_jq22q")
+
+[node name="LblMessageAB1" type="RichTextLabel" parent="UI/ActionUI/ActionButton1"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 14.0
+offset_right = 67.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("26_nqrvb")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center][color=black]sit[/color][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ActionButton2" type="TextureButton" parent="UI/ActionUI"]
+self_modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 608.0
+offset_top = 260.0
+offset_right = 672.0
+offset_bottom = 324.0
+texture_normal = ExtResource("25_23dnm")
+texture_pressed = ExtResource("26_jq22q")
+
+[node name="LblMessageAB2" type="RichTextLabel" parent="UI/ActionUI/ActionButton2"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 15.0
+offset_right = 61.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("26_nqrvb")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center][color=black]act 2[/color][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ActionButton3" type="TextureButton" parent="UI/ActionUI"]
+self_modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 691.0
+offset_top = 328.0
+offset_right = 755.0
+offset_bottom = 392.0
+texture_normal = ExtResource("25_23dnm")
+texture_pressed = ExtResource("26_jq22q")
+
+[node name="LblMessageAB3" type="RichTextLabel" parent="UI/ActionUI/ActionButton3"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 15.0
+offset_right = 61.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("26_nqrvb")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center][color=black]act 3[/color][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="StoryUI" type="NinePatchRect" parent="UI"]
+self_modulate = Color(1, 1, 1, 0.121569)
+layout_mode = 0
+offset_left = 250.0
+offset_top = 550.0
+offset_right = 1050.0
+offset_bottom = 714.0
+texture = ExtResource("28_m2bob")
+region_rect = Rect2(0, -0.0764275, 192, 64.0764)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/StoryUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StoryUI/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/StoryUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Avatar" type="TextureRect" parent="UI/StoryUI/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("29_i7bpi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/StoryUI/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("26_nqrvb")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "Day 1 of the pandemic....
+what am i going to do today?"
+
+[node name="OtherAvatar" type="TextureRect" parent="UI/StoryUI/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("30_i16rx")
+
+[connection signal="pressed" from="UI/ActionUI/ActionButton1" to="Player" method="_on_action_button_1_pressed"]
+
+[editable path="Map/House/LivingRoom/Build/wall"]
+[editable path="Map/House/LivingRoom/Build/wall2"]
+[editable path="Map/House/LivingRoom/Build/wallCornerRond"]
+[editable path="Map/House/LivingRoom/Build/wallCornerRond3"]
+[editable path="Map/House/LivingRoom/Build/wallCornerRond4"]
+[editable path="Map/House/LivingRoom/Build/wallCornerRond2"]
+[editable path="Map/House/LivingRoom/Build/wall5"]
+[editable path="Map/House/LivingRoom/Build/wall6"]
+[editable path="Map/House/LivingRoom/Build/wallDoorwayWide3"]
+[editable path="Map/House/LivingRoom/Build/wallWindow"]
+[editable path="Map/House/LivingRoom/Build/wallWindow2"]
+[editable path="Map/House/LivingRoom/Build/wallWindow4"]
+[editable path="Map/House/LivingRoom/Furniture/loungeDesignSofaCorner"]
+[editable path="Map/House/Office/bookcaseOpen"]
