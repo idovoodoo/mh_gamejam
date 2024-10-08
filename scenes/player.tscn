@@ -2655,10 +2655,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 bones/1/position = Vector3(0.0835711, 0.17625, -0.0287501)
 bones/2/position = Vector3(-0.0835711, 0.17625, -0.0287501)
 bones/3/position = Vector3(-1.44382e-15, 0.17625, -0.0287501)
-bones/3/rotation = Quaternion(0.0232663, 0, 0, 0.999729)
-bones/4/rotation = Quaternion(0, 0, -0.334453, 0.942412)
-bones/5/rotation = Quaternion(0, 0, 0.334453, 0.942412)
-bones/6/rotation = Quaternion(0, -0.0232663, 0, 0.999729)
+bones/4/rotation = Quaternion(0, 0, -0.382683, 0.92388)
+bones/5/rotation = Quaternion(0, 0, 0.382683, 0.92388)
 
 [node name="AnimationPlayer" parent="Visuals/character-male-f2" index="1"]
 libraries = {

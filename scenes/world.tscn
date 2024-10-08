@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cd78fk6kiow6f"]
+[gd_scene load_steps=87 format=3 uid="uid://cd78fk6kiow6f"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_0qqsj"]
 [ext_resource type="PackedScene" uid="uid://dpujwin8t0kqa" path="res://scenes/camera_rig.tscn" id="1_6oawf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cgflnv62boig0" path="res://assets/room_models/wallCornerRond.glb" id="3_60vxv"]
 [ext_resource type="PackedScene" uid="uid://cb3nfwtrmohjy" path="res://scenes/player.tscn" id="4_3l3i5"]
 [ext_resource type="Texture2D" uid="uid://chgheajp4i5t1" path="res://assets/textures/Light/texture_01.png" id="4_6wrbo"]
+[ext_resource type="PackedScene" uid="uid://bk5aoiwiqdpo2" path="res://assets/room_models/wallDoorwayWide.glb" id="4_wq8yq"]
 [ext_resource type="Texture2D" uid="uid://bi6wsdr81soo3" path="res://assets/textures/Light/texture_02.png" id="5_233s7"]
 [ext_resource type="PackedScene" uid="uid://dlpthvumymd5u" path="res://assets/room_models/wallWindow.glb" id="5_y7wkh"]
 [ext_resource type="PackedScene" uid="uid://ph5kfcjb5udm" path="res://assets/room_models/deskCorner.glb" id="6_eyjua"]
@@ -522,19 +523,47 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.286
 [node name="bookcaseClosedDoors" parent="Map/House/Bedroom" instance=ExtResource("47_1g3w6")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.69059, 0, 0.956806)
 
-[node name="Toilet" type="Node3D" parent="Map/House"]
+[node name="Bathroom" type="Node3D" parent="Map/House"]
 
-[node name="toilet" parent="Map/House/Toilet" instance=ExtResource("48_sx6ls")]
+[node name="toilet" parent="Map/House/Bathroom" instance=ExtResource("48_sx6ls")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.01601, 0, 2.18368)
 
-[node name="shower" parent="Map/House/Toilet" instance=ExtResource("49_ura7d")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 2.37782)
+[node name="shower" parent="Map/House/Bathroom" instance=ExtResource("49_ura7d")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0246434, 0, 2.37782)
 
-[node name="bathroomCabinetDrawer" parent="Map/House/Toilet" instance=ExtResource("50_ta07e")]
+[node name="bathroomCabinetDrawer" parent="Map/House/Bathroom" instance=ExtResource("50_ta07e")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.445651, -0.000122267, 2.50103)
 
-[node name="bathroomCabinet" parent="Map/House/Toilet" instance=ExtResource("51_a41jc")]
+[node name="bathroomCabinet" parent="Map/House/Bathroom" instance=ExtResource("51_a41jc")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.351953, 0.731017, 2.73818)
+
+[node name="Walls" type="Node3D" parent="Map/House"]
+
+[node name="wallCornerRond" parent="Map/House/Walls" instance=ExtResource("3_60vxv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.600282, 0, 1.03272)
+
+[node name="wallCornerRond(Clone)" parent="Map/House/Walls/wallCornerRond" index="0"]
+layers = 2
+
+[node name="wallDoorwayWide" parent="Map/House/Walls" instance=ExtResource("4_wq8yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.949624, 0, 0.532472)
+
+[node name="wallDoorwayWide(Clone)" parent="Map/House/Walls/wallDoorwayWide" index="0"]
+layers = 2
+
+[node name="wall4" parent="Map/House/Walls" instance=ExtResource("2_luktd")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -2.10222, 0, 0.550911)
+
+[node name="wall(Clone)" parent="Map/House/Walls/wall4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422092, 0, -0.0182874)
+layers = 2
+
+[node name="wall5" parent="Map/House/Walls" instance=ExtResource("2_luktd")]
+transform = Transform3D(-8.52372e-08, 0, -1, 0, 1, 0, 1.95, 0, -4.37114e-08, 0.530493, 0, 1.83296)
+
+[node name="wall(Clone)" parent="Map/House/Walls/wall5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422092, 0, -0.0182874)
+layers = 2
 
 [node name="Player" parent="." instance=ExtResource("4_3l3i5")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.70135, 0.132454, 0)
@@ -704,3 +733,7 @@ texture = ExtResource("30_i16rx")
 [editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpperCorner"]
 [editable path="Map/House/Kitchen/Appliances/hoodLarge"]
 [editable path="Map/House/Kitchen/Appliances/kitchenBlender"]
+[editable path="Map/House/Walls/wallCornerRond"]
+[editable path="Map/House/Walls/wallDoorwayWide"]
+[editable path="Map/House/Walls/wall4"]
+[editable path="Map/House/Walls/wall5"]
