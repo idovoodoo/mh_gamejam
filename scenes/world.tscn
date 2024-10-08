@@ -1,13 +1,11 @@
-[gd_scene load_steps=70 format=3 uid="uid://cd78fk6kiow6f"]
+[gd_scene load_steps=86 format=3 uid="uid://cd78fk6kiow6f"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_0qqsj"]
 [ext_resource type="PackedScene" uid="uid://dpujwin8t0kqa" path="res://scenes/camera_rig.tscn" id="1_6oawf"]
-[ext_resource type="Material" uid="uid://oeuve54nv610" path="res://assets/materials/floor-basic.tres" id="1_cyq4a"]
 [ext_resource type="PackedScene" uid="uid://di2duq76w57ur" path="res://assets/room_models/wall.glb" id="2_luktd"]
 [ext_resource type="PackedScene" uid="uid://cgflnv62boig0" path="res://assets/room_models/wallCornerRond.glb" id="3_60vxv"]
 [ext_resource type="PackedScene" uid="uid://cb3nfwtrmohjy" path="res://scenes/player.tscn" id="4_3l3i5"]
 [ext_resource type="Texture2D" uid="uid://chgheajp4i5t1" path="res://assets/textures/Light/texture_01.png" id="4_6wrbo"]
-[ext_resource type="PackedScene" uid="uid://bk5aoiwiqdpo2" path="res://assets/room_models/wallDoorwayWide.glb" id="4_wq8yq"]
 [ext_resource type="Texture2D" uid="uid://bi6wsdr81soo3" path="res://assets/textures/Light/texture_02.png" id="5_233s7"]
 [ext_resource type="PackedScene" uid="uid://dlpthvumymd5u" path="res://assets/room_models/wallWindow.glb" id="5_y7wkh"]
 [ext_resource type="PackedScene" uid="uid://ph5kfcjb5udm" path="res://assets/room_models/deskCorner.glb" id="6_eyjua"]
@@ -44,8 +42,22 @@
 [ext_resource type="PackedScene" uid="uid://cv1mv1ucwp7ay" path="res://assets/room_models/kitchenCabinetUpper.glb" id="42_p3oll"]
 [ext_resource type="PackedScene" uid="uid://bbf1i7ektajeh" path="res://assets/room_models/kitchenCabinetUpperDouble.glb" id="43_4trqx"]
 [ext_resource type="PackedScene" uid="uid://ben8k04gutwrp" path="res://assets/room_models/kitchenCabinetUpperLow.glb" id="44_mhhh1"]
+[ext_resource type="PackedScene" uid="uid://wqpbgud3ovx6" path="res://assets/room_models/lampRoundTable.glb" id="44_ngijk"]
 [ext_resource type="PackedScene" uid="uid://bv1mldwfwrb64" path="res://assets/room_models/hoodLarge.glb" id="45_23goa"]
+[ext_resource type="PackedScene" uid="uid://bx2g8307subfp" path="res://assets/room_models/bedDouble.glb" id="45_60ua7"]
 [ext_resource type="PackedScene" uid="uid://b0p4ql8va47c0" path="res://assets/room_models/kitchenCabinetUpperCorner.glb" id="46_jywy8"]
+[ext_resource type="PackedScene" uid="uid://cr04pgpfemkbk" path="res://assets/room_models/rugDoormat.glb" id="46_o7lcy"]
+[ext_resource type="PackedScene" uid="uid://ubyu3hl1nsti" path="res://assets/room_models/cabinetBedDrawerTable.glb" id="46_wa6vq"]
+[ext_resource type="PackedScene" uid="uid://cuxy4t1v67tvg" path="res://assets/room_models/bookcaseClosedDoors.glb" id="47_1g3w6"]
+[ext_resource type="PackedScene" uid="uid://cbcm31s5ngcpq" path="res://assets/room_models/doorwayFront.glb" id="47_qjtfn"]
+[ext_resource type="PackedScene" uid="uid://ba5xbokxkbckk" path="res://assets/room_models/wallDoorway.glb" id="48_7o1ji"]
+[ext_resource type="PackedScene" uid="uid://clxxulwr78l7a" path="res://assets/room_models/toilet.glb" id="48_sx6ls"]
+[ext_resource type="PackedScene" uid="uid://bqfldwhpql02g" path="res://assets/room_models/coatRackStanding.glb" id="49_rcf8u"]
+[ext_resource type="PackedScene" uid="uid://do1aj33yo7y0h" path="res://assets/room_models/shower.glb" id="49_ura7d"]
+[ext_resource type="PackedScene" uid="uid://cqjdrhtjcjxxc" path="res://assets/room_models/floorFull.glb" id="50_ja7r4"]
+[ext_resource type="PackedScene" uid="uid://pnitwgfpmts5" path="res://assets/room_models/bathroomCabinetDrawer.glb" id="50_ta07e"]
+[ext_resource type="Texture2D" uid="uid://cnq1pimnfbomp" path="res://assets/textures/Light/texture_03.png" id="51_1vika"]
+[ext_resource type="PackedScene" uid="uid://84wgbu2gqgmi" path="res://assets/room_models/bathroomCabinet.glb" id="51_a41jc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sikn3"]
 
@@ -60,6 +72,18 @@ tonemap_mode = 3
 adjustment_enabled = true
 adjustment_contrast = 1.17
 adjustment_saturation = 0.92
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5ky7"]
+albedo_texture = ExtResource("51_1vika")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vom1j"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6yan"]
+albedo_texture = ExtResource("4_6wrbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vljt3"]
+albedo_texture = ExtResource("4_6wrbo")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc33k"]
 albedo_texture = ExtResource("4_6wrbo")
@@ -129,14 +153,21 @@ environment = SubResource("Environment_trb3a")
 
 [node name="Lighting" type="Node3D" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lighting"]
+[node name="OmniLight3DOffice" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.854, 2, -1.666)
 light_color = Color(1, 1, 0.686275, 1)
 light_energy = 0.515
 light_specular = 0.0
 shadow_enabled = true
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lighting"]
+[node name="OmniLight3DBedroom" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80891, 2, 1.64789)
+light_color = Color(1, 1, 0.686275, 1)
+light_energy = 0.515
+light_specular = 0.0
+shadow_enabled = true
+
+[node name="OmniLight3DKitchen" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64424, 2, 1.56313)
 light_color = Color(1, 1, 0.686275, 1)
 light_energy = 0.515
@@ -149,15 +180,56 @@ shadow_enabled = true
 
 [node name="House" type="Node3D" parent="Map"]
 
+[node name="Flooring" type="Node3D" parent="Map/House"]
+transform = Transform3D(-3.6, -1.50996e-07, 0, 5.43585e-07, -1, 0, 0, 0, 2.5, 3.05155, -2.38419e-07, -0.56168)
+
+[node name="floorFullKitchen" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
+transform = Transform3D(0.694444, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, -0.00352037, -1.91361e-09, 1.45051)
+
+[node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullKitchen" index="0"]
+transform = Transform3D(1, -7.10543e-15, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0105284)
+surface_material_override/0 = SubResource("StandardMaterial3D_i5ky7")
+
+[node name="floorFullBathroom" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
+transform = Transform3D(0.333333, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 0.691507, 3.75893e-07, 1.56411)
+
+[node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullBathroom" index="0"]
+transform = Transform3D(1, 0, 0, 1.42109e-14, 1, 0, 0, 0, 1, -0.00345546, -6.26102e-10, -0.123914)
+surface_material_override/0 = SubResource("StandardMaterial3D_i5ky7")
+
+[node name="floorFullBedroom" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
+transform = Transform3D(0.694444, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 1.00772, 5.47781e-07, 1.45051)
+
+[node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullBedroom" index="0"]
+transform = Transform3D(1, -7.10543e-15, 0, 8.52651e-14, 1, 0, 0, 0, 1, 0.0227584, 8.59109e-09, -0.0105284)
+surface_material_override/0 = SubResource("StandardMaterial3D_i5ky7")
+
+[node name="floorFullOffice" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
+transform = Transform3D(0.694444, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 1.00092, 5.44085e-07, 0)
+
+[node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullOffice" index="0"]
+transform = Transform3D(1, -7.10543e-15, 0, 0, 1, 0, 0, 0, 1, -0.00225657, -8.51827e-10, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_vom1j")
+
+[node name="floorFullLounge" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
+transform = Transform3D(1, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullLounge" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o6yan")
+
+[node name="floorFullHallway" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
+transform = Transform3D(1.69444, 3.55271e-15, 0, 0, 1, 0, 0, 0, 0.44, 0.000211418, 1.14937e-10, 0.443291)
+
+[node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullHallway" index="0"]
+transform = Transform3D(1, -7.10543e-15, 0, 1.13687e-13, 1, 0, 0, 0, 0.999999, 0, 0, -0.00753954)
+surface_material_override/0 = SubResource("StandardMaterial3D_vljt3")
+
+[node name="CollisionShape3D" parent="Map/House/Flooring/floorFullHallway/floorFull(Clone)/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 5.68434e-14, 1, 0, 0, 0, 1, 0, 0, -0.00376961)
+
 [node name="LivingRoom" type="Node3D" parent="Map/House"]
 
 [node name="Build" type="Node3D" parent="Map/House/LivingRoom"]
-
-[node name="Floor" type="CSGBox3D" parent="Map/House/LivingRoom/Build"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-material_override = ExtResource("1_cyq4a")
-use_collision = true
-size = Vector3(6, 1, 6)
 
 [node name="wall" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, -2.50856, 0, 3.00129)
@@ -214,12 +286,6 @@ transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -2, 0, 2.98023e-08, 3.00234,
 [node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall6" index="0"]
 layers = 2
 
-[node name="wallDoorwayWide3" parent="Map/House/LivingRoom/Build" instance=ExtResource("4_wq8yq")]
-transform = Transform3D(-1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 2.95376, 0, -0.507521)
-
-[node name="wallDoorwayWide(Clone)" parent="Map/House/LivingRoom/Build/wallDoorwayWide3" index="0"]
-layers = 2
-
 [node name="wallWindow" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
 transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, -2.95211, 0, -0.460153)
 
@@ -250,6 +316,24 @@ surface_material_override/0 = SubResource("StandardMaterial3D_e84ah")
 surface_material_override/1 = SubResource("StandardMaterial3D_h2lxj")
 surface_material_override/2 = SubResource("StandardMaterial3D_wjdpt")
 
+[node name="rugDoormat" parent="Map/House/LivingRoom/Build" instance=ExtResource("46_o7lcy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.83205, 2.38419e-07, 0.185736)
+
+[node name="doorwayFront" parent="Map/House/LivingRoom/Build" instance=ExtResource("47_qjtfn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.01972, -2.38419e-07, 0.237126)
+
+[node name="doorwayFront(Clone)" parent="Map/House/LivingRoom/Build/doorwayFront" index="0"]
+layers = 2
+
+[node name="door" parent="Map/House/LivingRoom/Build/doorwayFront/doorwayFront(Clone)" index="0"]
+layers = 2
+
+[node name="wallDoorway" parent="Map/House/LivingRoom/Build" instance=ExtResource("48_7o1ji")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.00089, 0, 0.494585)
+
+[node name="wallDoorway(Clone)" parent="Map/House/LivingRoom/Build/wallDoorway" index="0"]
+layers = 2
+
 [node name="Furniture" type="Node3D" parent="Map/House/LivingRoom"]
 
 [node name="tableCoffee" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("11_nmpnd")]
@@ -266,6 +350,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1196
 
 [node name="loungeDesignChair" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("13_lo14b")]
 transform = Transform3D(-0.610601, 0, 0.791938, 0, 1, 0, -0.791938, 0, -0.610601, 0.748124, 0, -0.626338)
+
+[node name="coatRackStanding" parent="Map/House/LivingRoom" instance=ExtResource("49_rcf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76932, 0, -0.511351)
 
 [node name="Office" type="Node3D" parent="Map/House"]
 
@@ -417,7 +504,37 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.1086
 
 [node name="Bedroom" type="Node3D" parent="Map/House"]
 
+[node name="lampRoundTable" parent="Map/House/Bedroom" instance=ExtResource("44_ngijk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46858, 0.261877, 2.88198)
+
+[node name="lampRoundTable2" parent="Map/House/Bedroom" instance=ExtResource("44_ngijk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.73682, 0.261877, 2.88198)
+
+[node name="bedDouble" parent="Map/House/Bedroom" instance=ExtResource("45_60ua7")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.56417, 0, 1.81229)
+
+[node name="cabinetBedDrawerTable" parent="Map/House/Bedroom" instance=ExtResource("46_wa6vq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.5441, 0, 2.72537)
+
+[node name="cabinetBedDrawerTable2" parent="Map/House/Bedroom" instance=ExtResource("46_wa6vq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.28657, 0, 2.72537)
+
+[node name="bookcaseClosedDoors" parent="Map/House/Bedroom" instance=ExtResource("47_1g3w6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.69059, 0, 0.956806)
+
 [node name="Toilet" type="Node3D" parent="Map/House"]
+
+[node name="toilet" parent="Map/House/Toilet" instance=ExtResource("48_sx6ls")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.01601, 0, 2.18368)
+
+[node name="shower" parent="Map/House/Toilet" instance=ExtResource("49_ura7d")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 2.37782)
+
+[node name="bathroomCabinetDrawer" parent="Map/House/Toilet" instance=ExtResource("50_ta07e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.445651, -0.000122267, 2.50103)
+
+[node name="bathroomCabinet" parent="Map/House/Toilet" instance=ExtResource("51_a41jc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.351953, 0.731017, 2.73818)
 
 [node name="Player" parent="." instance=ExtResource("4_3l3i5")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.70135, 0.132454, 0)
@@ -559,6 +676,12 @@ texture = ExtResource("30_i16rx")
 
 [connection signal="pressed" from="UI/ActionUI/ActionButton1" to="Player" method="_on_action_button_1_pressed"]
 
+[editable path="Map/House/Flooring/floorFullKitchen"]
+[editable path="Map/House/Flooring/floorFullBathroom"]
+[editable path="Map/House/Flooring/floorFullBedroom"]
+[editable path="Map/House/Flooring/floorFullOffice"]
+[editable path="Map/House/Flooring/floorFullLounge"]
+[editable path="Map/House/Flooring/floorFullHallway"]
 [editable path="Map/House/LivingRoom/Build/wall"]
 [editable path="Map/House/LivingRoom/Build/wall2"]
 [editable path="Map/House/LivingRoom/Build/wallCornerRond"]
@@ -567,10 +690,11 @@ texture = ExtResource("30_i16rx")
 [editable path="Map/House/LivingRoom/Build/wallCornerRond2"]
 [editable path="Map/House/LivingRoom/Build/wall5"]
 [editable path="Map/House/LivingRoom/Build/wall6"]
-[editable path="Map/House/LivingRoom/Build/wallDoorwayWide3"]
 [editable path="Map/House/LivingRoom/Build/wallWindow"]
 [editable path="Map/House/LivingRoom/Build/wallWindow2"]
 [editable path="Map/House/LivingRoom/Build/wallWindow4"]
+[editable path="Map/House/LivingRoom/Build/doorwayFront"]
+[editable path="Map/House/LivingRoom/Build/wallDoorway"]
 [editable path="Map/House/LivingRoom/Furniture/loungeDesignSofaCorner"]
 [editable path="Map/House/Office/bookcaseOpen"]
 [editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpper"]
