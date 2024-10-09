@@ -1,16 +1,20 @@
-[gd_scene load_steps=87 format=3 uid="uid://cd78fk6kiow6f"]
+[gd_scene load_steps=129 format=3 uid="uid://cd78fk6kiow6f"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_0qqsj"]
 [ext_resource type="PackedScene" uid="uid://dpujwin8t0kqa" path="res://scenes/camera_rig.tscn" id="1_6oawf"]
 [ext_resource type="PackedScene" uid="uid://di2duq76w57ur" path="res://assets/room_models/wall.glb" id="2_luktd"]
 [ext_resource type="PackedScene" uid="uid://cgflnv62boig0" path="res://assets/room_models/wallCornerRond.glb" id="3_60vxv"]
 [ext_resource type="PackedScene" uid="uid://cb3nfwtrmohjy" path="res://scenes/player.tscn" id="4_3l3i5"]
+[ext_resource type="Texture2D" uid="uid://dvwwkahv3spoq" path="res://assets/textures/256x256/Tile/Tile_16-256x256.png" id="4_4a8ld"]
 [ext_resource type="Texture2D" uid="uid://chgheajp4i5t1" path="res://assets/textures/Light/texture_01.png" id="4_6wrbo"]
 [ext_resource type="PackedScene" uid="uid://bk5aoiwiqdpo2" path="res://assets/room_models/wallDoorwayWide.glb" id="4_wq8yq"]
-[ext_resource type="Texture2D" uid="uid://bi6wsdr81soo3" path="res://assets/textures/Light/texture_02.png" id="5_233s7"]
 [ext_resource type="PackedScene" uid="uid://dlpthvumymd5u" path="res://assets/room_models/wallWindow.glb" id="5_y7wkh"]
 [ext_resource type="PackedScene" uid="uid://ph5kfcjb5udm" path="res://assets/room_models/deskCorner.glb" id="6_eyjua"]
+[ext_resource type="Texture2D" uid="uid://cthnq6uea28bp" path="res://assets/textures/256x256/Wood/Wood_13-256x256.png" id="6_hhuwk"]
 [ext_resource type="PackedScene" uid="uid://c3j4wb5hfbuv0" path="res://assets/room_models/books.glb" id="6_odqys"]
+[ext_resource type="Texture2D" uid="uid://dlf6ugda6o8hi" path="res://assets/textures/256x256/Plaster/Plaster_11-256x256.png" id="7_n073k"]
+[ext_resource type="Texture2D" uid="uid://68qmns3rrcf" path="res://assets/textures/256x256/Plaster/Plaster_02-256x256.png" id="7_qxon8"]
+[ext_resource type="Texture2D" uid="uid://bygx6jrvmiegn" path="res://assets/textures/Beigewall_Texture.png" id="10_4rc2g"]
 [ext_resource type="PackedScene" uid="uid://b4c4eevmmo7d3" path="res://assets/room_models/computerMouse.glb" id="10_odjgi"]
 [ext_resource type="PackedScene" uid="uid://cnqtb6jfny040" path="res://assets/room_models/tableCoffee.glb" id="11_nmpnd"]
 [ext_resource type="PackedScene" uid="uid://c5hl5tf6r8ibt" path="res://assets/room_models/computerScreen.glb" id="11_ooen7"]
@@ -59,95 +63,227 @@
 [ext_resource type="PackedScene" uid="uid://pnitwgfpmts5" path="res://assets/room_models/bathroomCabinetDrawer.glb" id="50_ta07e"]
 [ext_resource type="Texture2D" uid="uid://cnq1pimnfbomp" path="res://assets/textures/Light/texture_03.png" id="51_1vika"]
 [ext_resource type="PackedScene" uid="uid://84wgbu2gqgmi" path="res://assets/room_models/bathroomCabinet.glb" id="51_a41jc"]
+[ext_resource type="Texture2D" uid="uid://bxpr118wq8wvd" path="res://assets/textures/256x256/Grass/Grass_05-256x256.png" id="53_mjeku"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sikn3"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0e2gu"]
+sun_angle_max = 181.11
+sun_curve = 0.0861524
 
 [sub_resource type="Sky" id="Sky_e2qj5"]
-sky_material = SubResource("ProceduralSkyMaterial_sikn3")
+sky_material = SubResource("ProceduralSkyMaterial_0e2gu")
 
 [sub_resource type="Environment" id="Environment_trb3a"]
 background_mode = 2
 sky = SubResource("Sky_e2qj5")
 ambient_light_source = 3
-tonemap_mode = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.8
+reflected_light_source = 1
+tonemap_mode = 2
+fog_light_energy = 0.33
+fog_sky_affect = 0.705
 adjustment_enabled = true
-adjustment_contrast = 1.17
-adjustment_saturation = 0.92
+adjustment_brightness = 0.7
+adjustment_contrast = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vt05r"]
+albedo_texture = ExtResource("4_4a8ld")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5ky7"]
 albedo_texture = ExtResource("51_1vika")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw111"]
+albedo_texture = ExtResource("6_hhuwk")
+uv1_scale = Vector3(12, 12, 12)
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vom1j"]
 albedo_texture = ExtResource("4_6wrbo")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6yan"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsxcf"]
+albedo_texture = ExtResource("7_qxon8")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.574349
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vljt3"]
 albedo_texture = ExtResource("4_6wrbo")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc33k"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t44gi"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7voj"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qq43t"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ws0rn"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivaa2"]
+albedo_texture = ExtResource("7_n073k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27mu1"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjnky"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxoo8"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fr7w"]
+albedo_texture = ExtResource("7_n073k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovchi"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2wlo"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrh2b"]
-albedo_texture = ExtResource("5_233s7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p148e"]
+albedo_texture = ExtResource("7_n073k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3iyx"]
-albedo_texture = ExtResource("5_233s7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axbve"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkxmr"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkvnq"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kt6m"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n12x"]
+albedo_texture = ExtResource("7_n073k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkved"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmeu5"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhj5e"]
-albedo_texture = ExtResource("5_233s7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2r04"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxvwt"]
-albedo_texture = ExtResource("5_233s7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67nbn"]
+albedo_texture = ExtResource("7_n073k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56gnk"]
-albedo_texture = ExtResource("5_233s7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4llw"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3rpd"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vw1ul"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mc1ju"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1s5ii"]
+albedo_texture = ExtResource("7_n073k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twbg5"]
-albedo_texture = ExtResource("4_6wrbo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7k5n"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e84ah"]
-albedo_texture = ExtResource("5_233s7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcajp"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2lxj"]
-albedo_texture = ExtResource("5_233s7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aij2q"]
+albedo_texture = ExtResource("10_4rc2g")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjdpt"]
-albedo_texture = ExtResource("5_233s7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7667"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hhs3"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6k4u"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6s30"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82xjg"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_743xp"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5vev"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbgku"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k88pj"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7nip"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02dgg"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyiw0"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rxoh"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atxku"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3700r"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mq0uf"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56l0a"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5fqk"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nv1r7"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ughk"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0lrv"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpokq"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxuom"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wopqt"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2sa0"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ao5a"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu04c"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mghc8"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7lag"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw24x"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxnw7"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pd3fd"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ljon"]
+albedo_texture = ExtResource("10_4rc2g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gaa2"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rj6wd"]
+albedo_texture = ExtResource("7_n073k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlu40"]
+albedo_texture = ExtResource("53_mjeku")
+uv2_triplanar = true
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_0qqsj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_trb3a")
@@ -156,8 +292,9 @@ environment = SubResource("Environment_trb3a")
 
 [node name="OmniLight3DOffice" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.854, 2, -1.666)
-light_color = Color(1, 1, 0.686275, 1)
-light_energy = 0.515
+light_color = Color(1, 1, 0.752941, 1)
+light_energy = 0.5
+light_size = 0.454
 light_specular = 0.0
 shadow_enabled = true
 
@@ -186,40 +323,44 @@ transform = Transform3D(-3.6, -1.50996e-07, 0, 5.43585e-07, -1, 0, 0, 0, 2.5, 3.
 
 [node name="floorFullKitchen" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
 transform = Transform3D(0.694444, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, -0.00352037, -1.91361e-09, 1.45051)
+visible = false
 
 [node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullKitchen" index="0"]
 transform = Transform3D(1, -7.10543e-15, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0105284)
-surface_material_override/0 = SubResource("StandardMaterial3D_i5ky7")
+surface_material_override/0 = SubResource("StandardMaterial3D_vt05r")
 
 [node name="floorFullBathroom" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
 transform = Transform3D(0.333333, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 0.691507, 3.75893e-07, 1.56411)
+visible = false
 
 [node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullBathroom" index="0"]
 transform = Transform3D(1, 0, 0, 1.42109e-14, 1, 0, 0, 0, 1, -0.00345546, -6.26102e-10, -0.123914)
 surface_material_override/0 = SubResource("StandardMaterial3D_i5ky7")
 
 [node name="floorFullBedroom" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
-transform = Transform3D(0.694444, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 1.00772, 5.47781e-07, 1.45051)
 
 [node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullBedroom" index="0"]
-transform = Transform3D(1, -7.10543e-15, 0, 8.52651e-14, 1, 0, 0, 0, 1, 0.0227584, 8.59109e-09, -0.0105284)
-surface_material_override/0 = SubResource("StandardMaterial3D_i5ky7")
+transform = Transform3D(1.7, -5.32907e-14, 0, 1.13687e-13, 1, 0, 0, 0, 2.4, 0, 0, 1.43273)
+surface_material_override/0 = SubResource("StandardMaterial3D_nw111")
 
 [node name="floorFullOffice" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
 transform = Transform3D(0.694444, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 1.00092, 5.44085e-07, 0)
+visible = false
 
 [node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullOffice" index="0"]
 transform = Transform3D(1, -7.10543e-15, 0, 0, 1, 0, 0, 0, 1, -0.00225657, -8.51827e-10, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_vom1j")
 
 [node name="floorFullLounge" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
-transform = Transform3D(1, 3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 
 [node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullLounge" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_o6yan")
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0, 0.441757)
+surface_material_override/0 = SubResource("StandardMaterial3D_bsxcf")
 
 [node name="floorFullHallway" parent="Map/House/Flooring" instance=ExtResource("50_ja7r4")]
 transform = Transform3D(1.69444, 3.55271e-15, 0, 0, 1, 0, 0, 0, 0.44, 0.000211418, 1.14937e-10, 0.443291)
+visible = false
 
 [node name="floorFull(Clone)" parent="Map/House/Flooring/floorFullHallway" index="0"]
 transform = Transform3D(1, -7.10543e-15, 0, 1.13687e-13, 1, 0, 0, 0, 0.999999, 0, 0, -0.00753954)
@@ -237,85 +378,108 @@ transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, -2.50856, 0, 3.00129)
 
 [node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall" index="0"]
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_t44gi")
+surface_material_override/1 = SubResource("StandardMaterial3D_qq43t")
+surface_material_override/2 = SubResource("StandardMaterial3D_ivaa2")
 
 [node name="wall2" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95192, 0, 0.466218)
 
 [node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall2" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_hc33k")
-surface_material_override/1 = SubResource("StandardMaterial3D_n7voj")
+surface_material_override/0 = SubResource("StandardMaterial3D_hjnky")
+surface_material_override/1 = SubResource("StandardMaterial3D_1fr7w")
+surface_material_override/2 = SubResource("StandardMaterial3D_o2wlo")
 
 [node name="wallCornerRond" parent="Map/House/LivingRoom/Build" instance=ExtResource("3_60vxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45362, 0, 3.00249)
 
 [node name="wallCornerRond(Clone)" parent="Map/House/LivingRoom/Build/wallCornerRond" index="0"]
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_p148e")
+surface_material_override/1 = SubResource("StandardMaterial3D_axbve")
+surface_material_override/2 = SubResource("StandardMaterial3D_wkvnq")
 
 [node name="wallCornerRond3" parent="Map/House/LivingRoom/Build" instance=ExtResource("3_60vxv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.00124, 0, -2.45101)
 
 [node name="wallCornerRond(Clone)" parent="Map/House/LivingRoom/Build/wallCornerRond3" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ws0rn")
-surface_material_override/1 = SubResource("StandardMaterial3D_27mu1")
-surface_material_override/2 = SubResource("StandardMaterial3D_gxoo8")
+surface_material_override/0 = SubResource("StandardMaterial3D_6n12x")
+surface_material_override/1 = SubResource("StandardMaterial3D_fmeu5")
+surface_material_override/2 = SubResource("StandardMaterial3D_r2r04")
 
 [node name="wallCornerRond4" parent="Map/House/LivingRoom/Build" instance=ExtResource("3_60vxv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.45293, 0, -3.00221)
 
 [node name="wallCornerRond(Clone)" parent="Map/House/LivingRoom/Build/wallCornerRond4" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ovchi")
-surface_material_override/1 = SubResource("StandardMaterial3D_nrh2b")
-surface_material_override/2 = SubResource("StandardMaterial3D_d3iyx")
+surface_material_override/0 = SubResource("StandardMaterial3D_67nbn")
+surface_material_override/1 = SubResource("StandardMaterial3D_l4llw")
+surface_material_override/2 = SubResource("StandardMaterial3D_vw1ul")
 
 [node name="wallCornerRond2" parent="Map/House/LivingRoom/Build" instance=ExtResource("3_60vxv")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.0016, 0, 2.45045)
 
 [node name="wallCornerRond(Clone)" parent="Map/House/LivingRoom/Build/wallCornerRond2" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_bkxmr")
-surface_material_override/1 = SubResource("StandardMaterial3D_8kt6m")
-surface_material_override/2 = SubResource("StandardMaterial3D_hkved")
+surface_material_override/0 = SubResource("StandardMaterial3D_1s5ii")
+surface_material_override/1 = SubResource("StandardMaterial3D_l7k5n")
+surface_material_override/2 = SubResource("StandardMaterial3D_gcajp")
 
 [node name="wall5" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
 transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -2, 0, 2.98023e-08, 3.0029, 0, 2.47158)
 
 [node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall5" index="0"]
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_aij2q")
+surface_material_override/1 = SubResource("StandardMaterial3D_n7667")
+surface_material_override/2 = SubResource("StandardMaterial3D_0hhs3")
 
 [node name="wall6" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
 transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -2, 0, 2.98023e-08, 3.00234, 0, -0.467514)
 
 [node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall6" index="0"]
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_a6k4u")
+surface_material_override/1 = SubResource("StandardMaterial3D_a6s30")
+surface_material_override/2 = SubResource("StandardMaterial3D_82xjg")
 
 [node name="wallWindow" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
 transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, -2.95211, 0, -0.460153)
 
 [node name="wallWindow(Clone)" parent="Map/House/LivingRoom/Build/wallWindow" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_hhj5e")
-surface_material_override/1 = SubResource("StandardMaterial3D_kxvwt")
-surface_material_override/2 = SubResource("StandardMaterial3D_56gnk")
+surface_material_override/0 = SubResource("StandardMaterial3D_743xp")
+surface_material_override/1 = SubResource("StandardMaterial3D_h5vev")
+surface_material_override/2 = SubResource("StandardMaterial3D_cbgku")
 
 [node name="wallWindow2" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
 transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, -2.95185, 0, 2.45192)
 
 [node name="wallWindow(Clone)" parent="Map/House/LivingRoom/Build/wallWindow2" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_o3rpd")
-surface_material_override/1 = SubResource("StandardMaterial3D_mc1ju")
-surface_material_override/2 = SubResource("StandardMaterial3D_twbg5")
+surface_material_override/0 = SubResource("StandardMaterial3D_k88pj")
+surface_material_override/1 = SubResource("StandardMaterial3D_w7nip")
+surface_material_override/2 = SubResource("StandardMaterial3D_02dgg")
 
 [node name="wall3" parent="Map/House/LivingRoom/Build" instance=ExtResource("2_luktd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.465499, 0, -2.95103)
 
+[node name="wall(Clone)" parent="Map/House/LivingRoom/Build/wall3" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oyiw0")
+surface_material_override/1 = SubResource("StandardMaterial3D_5rxoh")
+surface_material_override/2 = SubResource("StandardMaterial3D_atxku")
+
 [node name="wallWindow3" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0.460872, 0, -2.95159)
+
+[node name="wallWindow(Clone)" parent="Map/House/LivingRoom/Build/wallWindow3" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3700r")
+surface_material_override/1 = SubResource("StandardMaterial3D_mq0uf")
+surface_material_override/2 = SubResource("StandardMaterial3D_56l0a")
 
 [node name="wallWindow4" parent="Map/House/LivingRoom/Build" instance=ExtResource("5_y7wkh")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -2.45591, 0, -2.95083)
 
 [node name="wallWindow(Clone)" parent="Map/House/LivingRoom/Build/wallWindow4" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_e84ah")
-surface_material_override/1 = SubResource("StandardMaterial3D_h2lxj")
-surface_material_override/2 = SubResource("StandardMaterial3D_wjdpt")
+surface_material_override/0 = SubResource("StandardMaterial3D_r5fqk")
+surface_material_override/1 = SubResource("StandardMaterial3D_nv1r7")
+surface_material_override/2 = SubResource("StandardMaterial3D_5ughk")
 
 [node name="rugDoormat" parent="Map/House/LivingRoom/Build" instance=ExtResource("46_o7lcy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.83205, 2.38419e-07, 0.185736)
@@ -334,14 +498,17 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.0008
 
 [node name="wallDoorway(Clone)" parent="Map/House/LivingRoom/Build/wallDoorway" index="0"]
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_g0lrv")
+surface_material_override/1 = SubResource("StandardMaterial3D_dpokq")
+surface_material_override/2 = SubResource("StandardMaterial3D_jxuom")
 
 [node name="Furniture" type="Node3D" parent="Map/House/LivingRoom"]
 
 [node name="tableCoffee" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("11_nmpnd")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.53728, 0, -1.60225)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.78009, 0, -1.75823)
 
 [node name="cabinetTelevision" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("12_j2o4v")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.64953, -0.0689205, -2.12978)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.64953, -0.0689205, -2.02229)
 
 [node name="televisionModern" parent="Map/House/LivingRoom/Furniture/cabinetTelevision" instance=ExtResource("12_mte70")]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0.387293, 0.307297, -0.141624)
@@ -349,8 +516,11 @@ transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0.387293
 [node name="loungeDesignSofaCorner" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("12_xuqvp")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1196, 0, -1.55447)
 
+[node name="loungeDesignSofaCorner(Clone)" parent="Map/House/LivingRoom/Furniture/loungeDesignSofaCorner" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57628e-07, 0, 0.418046)
+
 [node name="loungeDesignChair" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("13_lo14b")]
-transform = Transform3D(-0.610601, 0, 0.791938, 0, 1, 0, -0.791938, 0, -0.610601, 0.748124, 0, -0.626338)
+transform = Transform3D(-0.610601, 0, 0.791938, 0, 1, 0, -0.791938, 0, -0.610601, 1.25434, 0, -0.60235)
 
 [node name="coatRackStanding" parent="Map/House/LivingRoom" instance=ExtResource("49_rcf8u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76932, 0, -0.511351)
@@ -526,16 +696,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.690
 [node name="Bathroom" type="Node3D" parent="Map/House"]
 
 [node name="toilet" parent="Map/House/Bathroom" instance=ExtResource("48_sx6ls")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.01601, 0, 2.18368)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.536478, 0, 1.7023)
 
 [node name="shower" parent="Map/House/Bathroom" instance=ExtResource("49_ura7d")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0246434, 0, 2.37782)
 
 [node name="bathroomCabinetDrawer" parent="Map/House/Bathroom" instance=ExtResource("50_ta07e")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.445651, -0.000122267, 2.50103)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.0993651, -0.000122279, 1.01472)
 
 [node name="bathroomCabinet" parent="Map/House/Bathroom" instance=ExtResource("51_a41jc")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.351953, 0.731017, 2.73818)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.336515, 0.731017, 0.921021)
 
 [node name="Walls" type="Node3D" parent="Map/House"]
 
@@ -544,19 +714,47 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.6002
 
 [node name="wallCornerRond(Clone)" parent="Map/House/Walls/wallCornerRond" index="0"]
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_wopqt")
+surface_material_override/1 = SubResource("StandardMaterial3D_c2sa0")
+surface_material_override/2 = SubResource("StandardMaterial3D_8ao5a")
 
 [node name="wallDoorwayWide" parent="Map/House/Walls" instance=ExtResource("4_wq8yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.949624, 0, 0.532472)
 
 [node name="wallDoorwayWide(Clone)" parent="Map/House/Walls/wallDoorwayWide" index="0"]
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_lu04c")
+surface_material_override/1 = SubResource("StandardMaterial3D_mghc8")
+surface_material_override/2 = SubResource("StandardMaterial3D_s7lag")
+
+[node name="wallDoorwayWide2" parent="Map/House/Walls" instance=ExtResource("4_wq8yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19476, 0, 0.532472)
+
+[node name="wallDoorwayWide(Clone)" parent="Map/House/Walls/wallDoorwayWide2" index="0"]
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_lu04c")
+surface_material_override/1 = SubResource("StandardMaterial3D_mghc8")
+surface_material_override/2 = SubResource("StandardMaterial3D_s7lag")
 
 [node name="wall4" parent="Map/House/Walls" instance=ExtResource("2_luktd")]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -2.10222, 0, 0.550911)
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 1, -2.61466, 0, 0.550911)
 
 [node name="wall(Clone)" parent="Map/House/Walls/wall4" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422092, 0, -0.0182874)
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_jw24x")
+surface_material_override/1 = SubResource("StandardMaterial3D_pxnw7")
+surface_material_override/2 = SubResource("StandardMaterial3D_pd3fd")
+
+[node name="wall7" parent="Map/House/Walls" instance=ExtResource("2_luktd")]
+transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 1, -1.11829, 0, 0.550911)
+
+[node name="wall(Clone)" parent="Map/House/Walls/wall7" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422092, 0, -0.0182874)
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_jw24x")
+surface_material_override/1 = SubResource("StandardMaterial3D_pxnw7")
+surface_material_override/2 = SubResource("StandardMaterial3D_pd3fd")
 
 [node name="wall5" parent="Map/House/Walls" instance=ExtResource("2_luktd")]
 transform = Transform3D(-8.52372e-08, 0, -1, 0, 1, 0, 1.95, 0, -4.37114e-08, 0.530493, 0, 1.83296)
@@ -564,6 +762,27 @@ transform = Transform3D(-8.52372e-08, 0, -1, 0, 1, 0, 1.95, 0, -4.37114e-08, 0.5
 [node name="wall(Clone)" parent="Map/House/Walls/wall5" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422092, 0, -0.0182874)
 layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_7ljon")
+surface_material_override/1 = SubResource("StandardMaterial3D_8gaa2")
+surface_material_override/2 = SubResource("StandardMaterial3D_rj6wd")
+
+[node name="wall6" parent="Map/House/Walls" instance=ExtResource("2_luktd")]
+transform = Transform3D(-1.05344e-07, 0, -1, 0, 1, 0, 2.41, 0, -4.37114e-08, -1.10977, 0, 1.55159)
+
+[node name="wall(Clone)" parent="Map/House/Walls/wall6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422092, 0, -0.0182874)
+layers = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_7ljon")
+surface_material_override/1 = SubResource("StandardMaterial3D_8gaa2")
+surface_material_override/2 = SubResource("StandardMaterial3D_rj6wd")
+
+[node name="Outside" type="Node3D" parent="Map"]
+
+[node name="floorGrass" parent="Map/Outside" instance=ExtResource("50_ja7r4")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -50, -0.1, 50)
+
+[node name="floorFull(Clone)" parent="Map/Outside/floorGrass" index="0"]
+material_override = SubResource("StandardMaterial3D_wlu40")
 
 [node name="Player" parent="." instance=ExtResource("4_3l3i5")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.70135, 0.132454, 0)
@@ -721,6 +940,8 @@ texture = ExtResource("30_i16rx")
 [editable path="Map/House/LivingRoom/Build/wall6"]
 [editable path="Map/House/LivingRoom/Build/wallWindow"]
 [editable path="Map/House/LivingRoom/Build/wallWindow2"]
+[editable path="Map/House/LivingRoom/Build/wall3"]
+[editable path="Map/House/LivingRoom/Build/wallWindow3"]
 [editable path="Map/House/LivingRoom/Build/wallWindow4"]
 [editable path="Map/House/LivingRoom/Build/doorwayFront"]
 [editable path="Map/House/LivingRoom/Build/wallDoorway"]
@@ -735,5 +956,9 @@ texture = ExtResource("30_i16rx")
 [editable path="Map/House/Kitchen/Appliances/kitchenBlender"]
 [editable path="Map/House/Walls/wallCornerRond"]
 [editable path="Map/House/Walls/wallDoorwayWide"]
+[editable path="Map/House/Walls/wallDoorwayWide2"]
 [editable path="Map/House/Walls/wall4"]
+[editable path="Map/House/Walls/wall7"]
 [editable path="Map/House/Walls/wall5"]
+[editable path="Map/House/Walls/wall6"]
+[editable path="Map/Outside/floorGrass"]
