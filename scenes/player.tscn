@@ -2664,7 +2664,7 @@ libraries = {
 }
 
 [node name="CameraPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 5.96046e-08, 4.47035e-08, -3.88827e-08, 0.871085, 0.491132, 2.98023e-08, -0.491132, 0.871085, -6.0466e-07, 2.37328, 3.41955)
+transform = Transform3D(1, 5.96046e-08, 4.47035e-08, -3.88827e-08, 0.871085, 0.491132, 2.98023e-08, -0.491132, 0.871085, -4.44266e-07, 4.13543, 6.54495)
 
 [node name="DetectionArea" type="Area3D" parent="."]
 

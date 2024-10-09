@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://cd78fk6kiow6f"]
+[gd_scene load_steps=131 format=3 uid="uid://cd78fk6kiow6f"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_0qqsj"]
 [ext_resource type="PackedScene" uid="uid://dpujwin8t0kqa" path="res://scenes/camera_rig.tscn" id="1_6oawf"]
@@ -65,27 +65,27 @@
 [ext_resource type="PackedScene" uid="uid://84wgbu2gqgmi" path="res://assets/room_models/bathroomCabinet.glb" id="51_a41jc"]
 [ext_resource type="Texture2D" uid="uid://bxpr118wq8wvd" path="res://assets/textures/256x256/Grass/Grass_05-256x256.png" id="53_mjeku"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0e2gu"]
-sun_angle_max = 181.11
-sun_curve = 0.0861524
+[sub_resource type="Gradient" id="Gradient_ufhiq"]
+offsets = PackedFloat32Array(0.0671642, 1)
+colors = PackedColorArray(0, 0, 0.0705882, 1, 1, 1, 0.898039, 1)
 
-[sub_resource type="Sky" id="Sky_e2qj5"]
-sky_material = SubResource("ProceduralSkyMaterial_0e2gu")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lceyk"]
+gradient = SubResource("Gradient_ufhiq")
 
-[sub_resource type="Environment" id="Environment_trb3a"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjwtb"]
+
+[sub_resource type="Sky" id="Sky_8t7dd"]
+sky_material = SubResource("ProceduralSkyMaterial_tjwtb")
+
+[sub_resource type="Environment" id="Environment_x323c"]
 background_mode = 2
-sky = SubResource("Sky_e2qj5")
-ambient_light_source = 3
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_sky_contribution = 0.5
-ambient_light_energy = 0.8
-reflected_light_source = 1
-tonemap_mode = 2
-fog_light_energy = 0.33
-fog_sky_affect = 0.705
+sky = SubResource("Sky_8t7dd")
+sky_rotation = Vector3(0, 0, 0.44855)
+tonemap_mode = 3
+ssao_radius = 3.02
 adjustment_enabled = true
-adjustment_brightness = 0.7
-adjustment_contrast = 1.5
+adjustment_saturation = 1.2
+adjustment_color_correction = SubResource("GradientTexture1D_lceyk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vt05r"]
 albedo_texture = ExtResource("4_4a8ld")
@@ -281,12 +281,13 @@ uv2_triplanar = true
 script = ExtResource("1_0qqsj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-visible = false
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.246836, 0.0645723, 0.966904, -0.434828, 0.89907, 0.0509628, 1.32729, 6.86794, -2.86758)
+light_color = Color(1, 1, 0.764706, 1)
 shadow_enabled = true
+sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_trb3a")
+environment = SubResource("Environment_x323c")
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -313,6 +314,7 @@ light_specular = 0.0
 shadow_enabled = true
 
 [node name="CameraRig" parent="." instance=ExtResource("1_6oawf")]
+visible = false
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -873,7 +875,7 @@ fit_content = true
 scroll_active = false
 
 [node name="StoryUI" type="NinePatchRect" parent="UI"]
-self_modulate = Color(1, 1, 1, 0.121569)
+self_modulate = Color(1, 1, 1, 0.607843)
 layout_mode = 0
 offset_left = 250.0
 offset_top = 550.0
@@ -914,7 +916,7 @@ size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("26_nqrvb")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "Day 1 of the pandemic....
+text = "[color= black]Day 1 of the pandemic....
 what am i going to do today?"
 
 [node name="OtherAvatar" type="TextureRect" parent="UI/StoryUI/MarginContainer/VBoxContainer/HBoxContainer"]
