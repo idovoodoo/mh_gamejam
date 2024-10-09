@@ -20,7 +20,11 @@ func _ready() -> void:
 	player.at_bookcase.connect(_on_player_at_bookcase)
 	player.left_bookcase.connect(_on_player_left_bookcase)
 	
+	player.at_lounge.connect(_on_player_at_lounge)
+	player.left_lounge.connect(_on_player_left_lounge)
+	
 	player.action_at_desk.connect(_on_player_action_at_desk)
+	player.action_at_lounge.connect(_on_player_action_at_lounge)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -51,6 +55,20 @@ func _on_player_left_bookcase() -> void:
 	lbl_message_ab_1.text = ""
 	action_ui.visible = false
 
+
+func _on_player_at_lounge() -> void:
+	lbl_message_ab_1.text = "[center][color=black]sit[/color][/center]"
+	#lbl_message_ab_2.text = "[center][color=black]water\nplant[/color][/center]"
+	action_button_1.visible = true
+	action_button_2.visible = false
+	action_button_3.visible = false
+	action_ui.visible = true
+
+func _on_player_left_lounge() -> void:
+	lbl_message_ab_1.text = ""
+	action_ui.visible = false
+	
+	
 func _on_player_action_at_desk() -> void:
 	lbl_message_ab_1.text = "[center][color=black]work[/color][/center]"
 	lbl_message_ab_2.text = "[center][color=black]social\nmedia[/color][/center]"
@@ -59,3 +77,13 @@ func _on_player_action_at_desk() -> void:
 	action_button_2.visible = true
 	action_button_3.visible = true
 	action_ui.visible = true
+
+func _on_player_action_at_lounge() -> void:
+	lbl_message_ab_1.text = "[center][color=black]watch news[/color][/center]"
+	lbl_message_ab_2.text = "[center][color=black]watch\nnotflix[/color][/center]"
+	lbl_message_ab_3.text = "[center][color=black]snooze[/color][/center]"
+	action_button_1.visible = true
+	action_button_2.visible = true
+	action_button_3.visible = true
+	action_ui.visible = true
+	

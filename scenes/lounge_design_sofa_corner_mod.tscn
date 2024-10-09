@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://wyjfb10l0bes"]
+
+[ext_resource type="PackedScene" uid="uid://ds0pr4bcapx26" path="res://assets/room_models/loungeDesignSofaCorner.glb" id="1_dmuys"]
+[ext_resource type="Script" path="res://scripts/lounge_design_sofa_corner_mod.gd" id="2_ab8th"]
+
+[node name="loungeDesignSofaCorner" instance=ExtResource("1_dmuys")]
+script = ExtResource("2_ab8th")
+
+[node name="SitPoint" type="Node3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.265316, -1.00704)
+
+[node name="LookPoint" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.3, 0)

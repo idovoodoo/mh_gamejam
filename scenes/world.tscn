@@ -22,9 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://trw64iy8py8p" path="res://assets/room_models/pottedPlant.glb" id="12_j1m76"]
 [ext_resource type="PackedScene" uid="uid://dwy5rm40y6g2s" path="res://assets/room_models/cabinetTelevision.glb" id="12_j2o4v"]
 [ext_resource type="PackedScene" uid="uid://dqybvioicdbbe" path="res://assets/room_models/televisionModern.glb" id="12_mte70"]
-[ext_resource type="PackedScene" uid="uid://ds0pr4bcapx26" path="res://assets/room_models/loungeDesignSofaCorner.glb" id="12_xuqvp"]
 [ext_resource type="PackedScene" uid="uid://rsm766fw8clp" path="res://assets/room_models/loungeDesignChair.glb" id="13_lo14b"]
 [ext_resource type="PackedScene" uid="uid://ckx0g4oueixuv" path="res://assets/room_models/bookcaseOpen.glb" id="14_vqx2s"]
+[ext_resource type="PackedScene" uid="uid://wyjfb10l0bes" path="res://scenes/lounge_design_sofa_corner_mod.tscn" id="20_52qyo"]
 [ext_resource type="PackedScene" uid="uid://bhxjqjwngrwv7" path="res://scenes/chair_desk_mod.tscn" id="22_60thx"]
 [ext_resource type="PackedScene" uid="uid://6wvyr3kddkdt" path="res://assets/room_models/kitchenCabinetCornerRound.glb" id="23_opqa1"]
 [ext_resource type="PackedScene" uid="uid://vehxfd5jhi33" path="res://assets/room_models/kitchenCabinetCornerInner.glb" id="23_pelht"]
@@ -509,20 +509,25 @@ surface_material_override/2 = SubResource("StandardMaterial3D_jxuom")
 [node name="tableCoffee" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("11_nmpnd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.78009, 0, -1.75823)
 
+[node name="tableCoffee(Clone)" parent="Map/House/LivingRoom/Furniture/tableCoffee" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.112785)
+
 [node name="cabinetTelevision" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("12_j2o4v")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.64953, -0.0689205, -2.02229)
 
 [node name="televisionModern" parent="Map/House/LivingRoom/Furniture/cabinetTelevision" instance=ExtResource("12_mte70")]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0.387293, 0.307297, -0.141624)
 
-[node name="loungeDesignSofaCorner" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("12_xuqvp")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1196, 0, -1.55447)
+[node name="loungeDesignSofaCorner2" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("20_52qyo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.44953, -0.0689205, -1.52732)
 
-[node name="loungeDesignSofaCorner(Clone)" parent="Map/House/LivingRoom/Furniture/loungeDesignSofaCorner" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57628e-07, 0, 0.418046)
+[node name="StaticBody3D" parent="Map/House/LivingRoom/Furniture/loungeDesignSofaCorner2/loungeDesignSofaCorner(Clone)" index="1" groups=["lounge"]]
 
 [node name="loungeDesignChair" parent="Map/House/LivingRoom/Furniture" instance=ExtResource("13_lo14b")]
 transform = Transform3D(-0.610601, 0, 0.791938, 0, 1, 0, -0.791938, 0, -0.610601, 1.25434, 0, -0.60235)
+
+[node name="loungeDesignChair(Clone)" parent="Map/House/LivingRoom/Furniture/loungeDesignChair" index="0"]
+transform = Transform3D(0.997518, 0, 0.0704182, 0, 1, 0, -0.0704182, 0, 0.997518, 0.177938, 0, -0.105645)
 
 [node name="coatRackStanding" parent="Map/House/LivingRoom" instance=ExtResource("49_rcf8u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76932, 0, -0.511351)
@@ -816,11 +821,11 @@ texture_pressed = ExtResource("26_jq22q")
 layout_mode = 2
 offset_left = -1.0
 offset_top = 14.0
-offset_right = 67.0
+offset_right = 66.0
 offset_bottom = 56.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("26_nqrvb")
-theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center][color=black]sit[/color][/center]"
 fit_content = true
@@ -838,13 +843,13 @@ texture_pressed = ExtResource("26_jq22q")
 
 [node name="LblMessageAB2" type="RichTextLabel" parent="UI/ActionUI/ActionButton2"]
 layout_mode = 0
-offset_left = 6.0
+offset_left = 2.0
 offset_top = 15.0
-offset_right = 61.0
+offset_right = 65.0
 offset_bottom = 56.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("26_nqrvb")
-theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center][color=black]act 2[/color][/center]"
 fit_content = true
@@ -862,13 +867,13 @@ texture_pressed = ExtResource("26_jq22q")
 
 [node name="LblMessageAB3" type="RichTextLabel" parent="UI/ActionUI/ActionButton3"]
 layout_mode = 0
-offset_left = 6.0
+offset_left = 2.0
 offset_top = 15.0
-offset_right = 61.0
+offset_right = 65.0
 offset_bottom = 56.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("26_nqrvb")
-theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center][color=black]act 3[/color][/center]"
 fit_content = true
@@ -947,7 +952,9 @@ texture = ExtResource("30_i16rx")
 [editable path="Map/House/LivingRoom/Build/wallWindow4"]
 [editable path="Map/House/LivingRoom/Build/doorwayFront"]
 [editable path="Map/House/LivingRoom/Build/wallDoorway"]
-[editable path="Map/House/LivingRoom/Furniture/loungeDesignSofaCorner"]
+[editable path="Map/House/LivingRoom/Furniture/tableCoffee"]
+[editable path="Map/House/LivingRoom/Furniture/loungeDesignSofaCorner2"]
+[editable path="Map/House/LivingRoom/Furniture/loungeDesignChair"]
 [editable path="Map/House/Office/bookcaseOpen"]
 [editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpper"]
 [editable path="Map/House/Kitchen/WallUnits/kitchenCabinetUpperDouble"]

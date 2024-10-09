@@ -3,8 +3,9 @@ class_name Player extends CharacterBody3D
 @onready var animation_player: AnimationPlayer = $"Visuals/character-male-f2/AnimationPlayer"
 @onready var visuals: Node3D = $Visuals
 @onready var camera_point: Node3D = $CameraPoint
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
-enum LOCATION {WANDER, DESK, BOOKCASE}
+enum LOCATION {WANDER, DESK, BOOKCASE, LOUNGE}
 
 const SPEED = 2.0
 const JUMP_VELOCITY = 4.5
@@ -16,8 +17,11 @@ signal at_desk
 signal left_desk
 signal at_bookcase
 signal left_bookcase
+signal at_lounge
+signal left_lounge
 
 signal action_at_desk
+signal action_at_lounge
 
 func _ready() -> void:
 	GameManager.set_player(self)
@@ -42,7 +46,9 @@ func _physics_process(delta: float) -> void:
 		
 		if not is_walking:
 			is_walking = true
+			collision_shape_3d.disabled = false
 			animation_player.play("walk")
+			
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -63,6 +69,10 @@ func _on_detection_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("bookcase"):
 		location = LOCATION.BOOKCASE
 		at_bookcase.emit()
+	
+	if body.is_in_group("lounge"):
+		location = LOCATION.LOUNGE
+		at_lounge.emit()
 
 
 func _on_detection_area_body_exited(body: Node3D) -> void:
@@ -74,6 +84,9 @@ func _on_detection_area_body_exited(body: Node3D) -> void:
 		location = LOCATION.WANDER
 		left_bookcase.emit()
 
+	if body.is_in_group("lounge"):
+		location = LOCATION.WANDER
+		left_lounge.emit()
 
 func _on_action_button_1_pressed() -> void:
 	if location == LOCATION.DESK:
@@ -81,7 +94,11 @@ func _on_action_button_1_pressed() -> void:
 		position = GameManager.desk_chair.sit_point.global_position
 		visuals.look_at(GameManager.desk_chair.look_point.global_position)
 		action_at_desk.emit()
-		
+	elif location == LOCATION.LOUNGE:
+		animation_player.play("sit")
+		position = GameManager.lounge_sofa.sit_point.global_position
+		visuals.look_at(GameManager.lounge_sofa.look_point.global_position)
+		action_at_lounge.emit()
 
 
 #avatar code:
