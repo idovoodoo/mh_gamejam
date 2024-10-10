@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwhrgnhnqalcw"]
+
+[ext_resource type="Script" path="res://scripts/time/time_ui.gd" id="1_1n43r"]
+[ext_resource type="LabelSettings" uid="uid://dc57mmvuwvcg6" path="res://label_settings.tres" id="2_cajlc"]
+[ext_resource type="Texture2D" uid="uid://bqasefgndnk1b" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_flat.png" id="2_x7vrj"]
+[ext_resource type="Texture2D" uid="uid://dkm7opkhruxi7" path="res://assets/ui/kenney_game-icons/PNG/White/1x/plus.png" id="4_50uam"]
+[ext_resource type="Texture2D" uid="uid://b65sianx1lm3e" path="res://assets/ui/kenney_game-icons/PNG/White/1x/minus.png" id="5_umbrj"]
+
+[node name="TimeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 109.0
+offset_bottom = 71.0
+script = ExtResource("1_1n43r")
+metadata/_edit_vertical_guides_ = [55.0, 22.0, 87.0]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.607843)
+layout_mode = 0
+offset_right = 109.0
+offset_bottom = 80.0
+texture = ExtResource("2_x7vrj")
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="DayControl" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 11.0
+offset_right = 88.0
+offset_bottom = 27.0
+
+[node name="LblDayLabel" type="Label" parent="DayControl"]
+layout_mode = 0
+offset_right = 36.0
+offset_bottom = 24.0
+text = "Day"
+label_settings = ExtResource("2_cajlc")
+
+[node name="LblDay" type="Label" parent="DayControl"]
+layout_mode = 0
+offset_left = 31.0
+offset_right = 67.0
+offset_bottom = 24.0
+text = "666"
+label_settings = ExtResource("2_cajlc")
+horizontal_alignment = 2
+
+[node name="ClockControl" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 48.0
+
+[node name="LblTimeHour" type="Label" parent="ClockControl"]
+layout_mode = 0
+offset_left = -10.0
+offset_right = 58.0
+offset_bottom = 24.0
+text = "06:"
+label_settings = ExtResource("2_cajlc")
+horizontal_alignment = 1
+
+[node name="LblTimeMinute" type="Label" parent="ClockControl"]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 80.0
+offset_bottom = 24.0
+text = "00"
+label_settings = ExtResource("2_cajlc")
+horizontal_alignment = 1
+
+[node name="LblRate" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 52.0
+offset_right = 91.0
+offset_bottom = 76.0
+text = "x1"
+label_settings = ExtResource("2_cajlc")
+horizontal_alignment = 1
+
+[node name="ButtonSpeedUp" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 33.0
+offset_right = 128.0
+offset_bottom = 83.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_50uam")
+
+[node name="ButtonSlowDown" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 33.0
+offset_right = 61.0
+offset_bottom = 83.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("5_umbrj")
+
+[connection signal="pressed" from="ButtonSpeedUp" to="." method="_on_button_speed_up_pressed"]
+[connection signal="pressed" from="ButtonSlowDown" to="." method="_on_button_slow_down_pressed"]
