@@ -6,6 +6,7 @@ class_name DateTime extends Resource
 @export var days: int = 0
 
 var delta_time: float = 0
+var time_scaled: float = 0
 
 func increase_by_sec(_delta_seconds: float) -> void:
 	delta_time += _delta_seconds
@@ -23,3 +24,5 @@ func increase_by_sec(_delta_seconds: float) -> void:
 	seconds = seconds % 60
 	minutes = minutes % 60
 	hours = hours % 24
+	
+	time_scaled = (hours + minutes / 60.0 + seconds / 3600.0) / 24.0
