@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=4 uid="uid://cd78fk6kiow6f"]
+[gd_scene load_steps=149 format=4 uid="uid://cd78fk6kiow6f"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_0qqsj"]
 [ext_resource type="PackedScene" uid="uid://dpujwin8t0kqa" path="res://scenes/camera_rig.tscn" id="1_6oawf"]
@@ -71,6 +71,7 @@
 [ext_resource type="PackedScene" uid="uid://dwhrgnhnqalcw" path="res://scenes/time_ui.tscn" id="68_80na6"]
 [ext_resource type="Script" path="res://scripts/time/time_system.gd" id="68_sekvp"]
 [ext_resource type="Script" path="res://scripts/time/date_time.gd" id="69_obf5y"]
+[ext_resource type="PackedScene" uid="uid://dlrrlycc87pm" path="res://scenes/stats_ui.tscn" id="72_micyi"]
 
 [sub_resource type="Gradient" id="Gradient_45o76"]
 offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
@@ -1064,9 +1065,16 @@ texture = ExtResource("30_i16rx")
 
 [node name="TimeUI" parent="UI" instance=ExtResource("68_80na6")]
 offset_left = 1136.0
-offset_top = 29.0
+offset_top = 30.0
 offset_right = 1245.0
-offset_bottom = 100.0
+offset_bottom = 101.0
+
+[node name="StatsUI" parent="UI" instance=ExtResource("72_micyi")]
+layout_mode = 1
+offset_left = 38.0
+offset_top = 30.0
+offset_right = 38.0
+offset_bottom = 30.0
 
 [connection signal="updated" from="DayNightCycle/TimeSystem" to="UI/TimeUI" method="_on_time_system_updated"]
 [connection signal="pressed" from="UI/ActionUI/ActionButton1" to="Player" method="_on_action_button_1_pressed"]
