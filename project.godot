@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg")
 
 folder_colors={
 "res://assets/": "red",
+"res://resources/": "pink",
 "res://scenes/": "green",
 "res://scripts/": "yellow"
 }

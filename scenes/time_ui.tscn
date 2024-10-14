@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dwhrgnhnqalcw"]
 
 [ext_resource type="Script" path="res://scripts/time/time_ui.gd" id="1_1n43r"]
+[ext_resource type="Texture2D" uid="uid://ctirpvajsc5p0" path="res://assets/ui/kenney_ui-pack/uipack_rpg_sheet.png" id="2_7lx1x"]
 [ext_resource type="LabelSettings" uid="uid://dc57mmvuwvcg6" path="res://label_settings.tres" id="2_cajlc"]
-[ext_resource type="Texture2D" uid="uid://bqasefgndnk1b" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_flat.png" id="2_x7vrj"]
 [ext_resource type="Texture2D" uid="uid://dkm7opkhruxi7" path="res://assets/ui/kenney_game-icons/PNG/White/1x/plus.png" id="4_50uam"]
 [ext_resource type="Texture2D" uid="uid://b65sianx1lm3e" path="res://assets/ui/kenney_game-icons/PNG/White/1x/minus.png" id="5_umbrj"]
 [ext_resource type="AudioStream" uid="uid://dla7h0b2wy3pe" path="res://assets/ui/kenney_ui-pack/Sounds/click-b.ogg" id="6_q1wfi"]
@@ -16,15 +16,16 @@ script = ExtResource("1_1n43r")
 metadata/_edit_vertical_guides_ = [55.0, 22.0, 87.0]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.607843)
+self_modulate = Color(0.172549, 0.968627, 1, 0.380392)
 layout_mode = 0
 offset_right = 109.0
 offset_bottom = 80.0
-texture = ExtResource("2_x7vrj")
-patch_margin_left = 25
-patch_margin_top = 25
-patch_margin_right = 25
-patch_margin_bottom = 25
+texture = ExtResource("2_7lx1x")
+region_rect = Rect2(0, 331, 189, 45)
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 4
 
 [node name="DayControl" type="Control" parent="."]
 anchors_preset = 0

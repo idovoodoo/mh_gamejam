@@ -1,7 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://cb3nfwtrmohjy"]
+[gd_scene load_steps=43 format=3 uid="uid://cb3nfwtrmohjy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3f7l5"]
 [ext_resource type="PackedScene" uid="uid://dbq81f10v5lt1" path="res://assets/characters/character-male-f.glb" id="2_ujoj8"]
+[ext_resource type="Theme" uid="uid://bagpxiwy8o2ep" path="res://new_theme.tres" id="3_t7uwx"]
+[ext_resource type="FontFile" uid="uid://b0ysc270kn6oj" path="res://assets/fonts/Kenney Mini Square.ttf" id="4_k4pkc"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dstjp"]
 height = 0.667792
@@ -2639,6 +2641,91 @@ _data = {
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pcogq"]
 
+[sub_resource type="Animation" id="Animation_bcegv"]
+resource_name = "stat_text"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/StatLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(576, 271), Vector2(569.5, 242.51), Vector2(557.015, 232.455)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/StatLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/StatLabel:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_48mex"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/StatLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 271)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/StatLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/StatLabel:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddx5i"]
+_data = {
+"RESET": SubResource("Animation_48mex"),
+"stat_text": SubResource("Animation_bcegv")
+}
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_3f7l5")
 
@@ -2663,6 +2750,17 @@ libraries = {
 "": SubResource("AnimationLibrary_ghyum")
 }
 
+[node name="StatLabel" type="RichTextLabel" parent="Visuals"]
+offset_left = 576.0
+offset_top = 271.0
+offset_right = 758.0
+offset_bottom = 329.0
+theme = ExtResource("3_t7uwx")
+theme_override_fonts/normal_font = ExtResource("4_k4pkc")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "can you see"
+
 [node name="CameraPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 5.96046e-08, 4.47035e-08, -3.88827e-08, 0.871085, 0.491132, 2.98023e-08, -0.491132, 0.871085, -4.44266e-07, 4.13543, 6.54495)
 
@@ -2674,9 +2772,15 @@ shape = SubResource("CylinderShape3D_pcogq")
 
 [node name="SitPoint" type="Node3D" parent="."]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ddx5i")
+}
+
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_shape_entered" from="DetectionArea" to="." method="_on_detection_area_area_shape_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Visuals/character-male-f2"]

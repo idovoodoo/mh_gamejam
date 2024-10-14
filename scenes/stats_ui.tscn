@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlrrlycc87pm"]
+[gd_scene load_steps=9 format=3 uid="uid://dlrrlycc87pm"]
 
-[ext_resource type="Texture2D" uid="uid://bqasefgndnk1b" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_flat.png" id="1_b3x15"]
+[ext_resource type="Texture2D" uid="uid://ctirpvajsc5p0" path="res://assets/ui/kenney_ui-pack/uipack_rpg_sheet.png" id="1_a3v86"]
+[ext_resource type="Script" path="res://scripts/stats_ui.gd" id="1_ab6vh"]
 [ext_resource type="Texture2D" uid="uid://ddwhs6u5vu8ng" path="res://assets/ui/kenney_ui-pack/individual/meeple.png" id="2_kgpsy"]
 [ext_resource type="Theme" uid="uid://bagpxiwy8o2ep" path="res://new_theme.tres" id="3_7ofo0"]
 [ext_resource type="Texture2D" uid="uid://cn8ub268co1ou" path="res://assets/ui/kenney_ui-pack/individual/apple.png" id="4_0n4uh"]
@@ -22,16 +23,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ab6vh")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.607843)
+self_modulate = Color(0.172549, 0.968627, 1, 0.380392)
+layout_mode = 0
 offset_right = 196.0
 offset_bottom = 110.0
-texture = ExtResource("1_b3x15")
-patch_margin_left = 25
-patch_margin_top = 25
-patch_margin_right = 25
-patch_margin_bottom = 25
+texture = ExtResource("1_a3v86")
+region_rect = Rect2(0, 331, 190, 45)
+patch_margin_left = 4
+patch_margin_top = 41
+patch_margin_right = 4
+patch_margin_bottom = 41
 
 [node name="MentalHealthIndicator" type="Control" parent="."]
 anchors_preset = 0
@@ -72,7 +76,7 @@ offset_bottom = 28.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource("3_7ofo0")
-value = 50.0
+min_value = -100.0
 show_percentage = false
 
 [node name="EnergyIndicator" type="Control" parent="."]
