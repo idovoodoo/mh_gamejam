@@ -4,6 +4,7 @@ extends Control
 @onready var lbl_time_hour: Label = $ClockControl/LblTimeHour
 @onready var lbl_time_minute: Label = $ClockControl/LblTimeMinute
 @onready var lbl_rate: Label = $LblRate
+@onready var sfxui: AudioStreamPlayer2D = $SFXUI
 
 signal speed_up
 signal slow_down
@@ -35,9 +36,10 @@ func _update_label(_label: Label, _value: int, _should_have_zero: bool = true) -
 
 
 func _on_button_speed_up_pressed() -> void:
-
+	sfxui.play()
 	speed_up.emit()
 
 
 func _on_button_slow_down_pressed() -> void:
+	sfxui.play()
 	slow_down.emit()

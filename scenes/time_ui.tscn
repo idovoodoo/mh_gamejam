@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwhrgnhnqalcw"]
+[gd_scene load_steps=7 format=3 uid="uid://dwhrgnhnqalcw"]
 
 [ext_resource type="Script" path="res://scripts/time/time_ui.gd" id="1_1n43r"]
 [ext_resource type="LabelSettings" uid="uid://dc57mmvuwvcg6" path="res://label_settings.tres" id="2_cajlc"]
 [ext_resource type="Texture2D" uid="uid://bqasefgndnk1b" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_flat.png" id="2_x7vrj"]
 [ext_resource type="Texture2D" uid="uid://dkm7opkhruxi7" path="res://assets/ui/kenney_game-icons/PNG/White/1x/plus.png" id="4_50uam"]
 [ext_resource type="Texture2D" uid="uid://b65sianx1lm3e" path="res://assets/ui/kenney_game-icons/PNG/White/1x/minus.png" id="5_umbrj"]
+[ext_resource type="AudioStream" uid="uid://dla7h0b2wy3pe" path="res://assets/ui/kenney_ui-pack/Sounds/click-b.ogg" id="6_q1wfi"]
 
 [node name="TimeUI" type="Control"]
 layout_mode = 3
@@ -100,6 +101,9 @@ offset_right = 61.0
 offset_bottom = 83.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("5_umbrj")
+
+[node name="SFXUI" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_q1wfi")
 
 [connection signal="pressed" from="ButtonSpeedUp" to="." method="_on_button_speed_up_pressed"]
 [connection signal="pressed" from="ButtonSlowDown" to="." method="_on_button_slow_down_pressed"]
