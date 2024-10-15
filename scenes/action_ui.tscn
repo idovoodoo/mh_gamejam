@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://py6grmo4qw27" path="res://assets/fonts/Kenney Future Narrow.ttf" id="3_qljh2"]
 
 [node name="ActionUI" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

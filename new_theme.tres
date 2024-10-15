@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bagpxiwy8o2ep"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bagpxiwy8o2ep"]
 
 [ext_resource type="FontFile" uid="uid://spkokj5nfvlr" path="res://assets/fonts/Kenney Mini.ttf" id="1_yio6v"]
 
@@ -15,9 +15,13 @@ bg_color = Color(0.12549, 0.8, 0, 1)
 corner_radius_top_left = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni578"]
+bg_color = Color(0.6, 0.6, 0.560784, 1)
+
 [resource]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_btmq3")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_igcbk")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/font_sizes/normal_font_size = 18
 RichTextLabel/fonts/normal_font = ExtResource("1_yio6v")
+RichTextLabel/styles/background = SubResource("StyleBoxFlat_ni578")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4nb6858pon3b"]
+
+[ext_resource type="Theme" uid="uid://bagpxiwy8o2ep" path="res://new_theme.tres" id="1_piity"]
+[ext_resource type="Script" path="res://scripts/phone_message.gd" id="1_qq26b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puaqg"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+
+[node name="PhoneMessage" type="HBoxContainer"]
+offset_right = 1287.0
+offset_bottom = 964.0
+script = ExtResource("1_qq26b")
+
+[node name="LeftSpacer" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MessageBubble" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_piity")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MessageBubble"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_piity")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_puaqg")
+text = "hey, it's me, i know it's early but it is urgent"
+fit_content = true
+scroll_active = false
+
+[node name="RightSpacer" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
