@@ -1,0 +1,92 @@
+[
+    {
+        "day": "1",
+        "time": "05:30",
+        "sender": "boss",
+        "text": "you there?"
+    },
+    {
+        "day": "1",
+        "time": "05:32",
+        "sender": "boss",
+        "text": "hey, it's me, i know it's early but it is urgent"
+    },
+    {
+        "day": "1",
+        "time": "05:35",
+        "sender": "boss",
+        "text": "please message when you get this"
+    },
+    {
+        "day": "1",
+        "time": "05:38",
+        "sender": "system",
+        "text": "alarm ringing... you have new messages."
+    },
+    {
+        "day": "1",
+        "time": "05:40",
+        "sender": "jamie",
+        "text": "hi, got your messages. what's up?"
+    },
+    {
+        "day": "1",
+        "time": "05:42",
+        "sender": "boss",
+        "text": "sorry to bug you so early. need to talk asap"
+    },
+    {
+        "day": "1",
+        "time": "05:45",
+        "sender": "jamie",
+        "text": "sure, what's going on?"
+    },
+    {
+        "day": "1",
+        "time": "05:47",
+        "sender": "boss",
+        "text": "we have some sudden changes coming up"
+    },
+    {
+        "day": "1",
+        "time": "05:48",
+        "sender": "jamie",
+        "text": "can you give me more details?"
+    },
+    {
+        "day": "1",
+        "time": "05:50",
+        "sender": "boss",
+        "text": "lockdown is happening starting today. no one can come to the office"
+    },
+    {
+        "day": "1",
+        "time": "05:53",
+        "sender": "boss",
+        "text": "please set up your home office as soon as you can"
+    },
+    {
+        "day": "1",
+        "time": "05:55",
+        "sender": "boss",
+        "text": "if you need help, IT support is available over phone"
+    },
+    {
+        "day": "1",
+        "time": "05:56",
+        "sender": "jamie",
+        "text": "okay, thanks for letting me know"
+    },
+    {
+        "day": "1",
+        "time": "05:57",
+        "sender": "boss",
+        "text": "let me know if you have any questions. stay safe!"
+    },
+    {
+        "day": "1",
+        "time": "05:59",
+        "sender": "boss",
+        "text": "we're all in this together"
+    }
+]

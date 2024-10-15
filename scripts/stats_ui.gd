@@ -29,7 +29,6 @@ func update_prod(_value) -> void:
 
 
 func _on_stat_system_mh_changed(_value) -> void:
-	print("update mh here" + str(_value))
 	update_mh(_value)
 
 

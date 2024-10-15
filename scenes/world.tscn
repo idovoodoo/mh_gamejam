@@ -1003,6 +1003,18 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="UI" parent="." instance=ExtResource("76_ybwqy")]
 
+[node name="NinePatchRect" parent="UI/Dialogue" index="0"]
+visible = true
+
+[node name="MobilePhone" parent="UI/Dialogue" index="1"]
+visible = false
+
+[node name="DateTime" parent="UI" index="1"]
+visible = true
+
+[node name="Meters" parent="UI" index="2"]
+visible = true
+
 [node name="EnergyProgressBar" parent="UI/Meters/StatsUI/EnergyIndicator" index="2"]
 theme_override_styles/fill = SubResource("StyleBoxFlat_yv8ml")
 

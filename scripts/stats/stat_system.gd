@@ -68,7 +68,6 @@ func add_rested_stat() -> void:
 	update_all()
 
 func update_all() -> void:
-	print("emitting signals")
 	mh_changed.emit(mental_health_level)
 	energy_changed.emit(energy_level)
 	prod_changed.emit(productivity_level)
