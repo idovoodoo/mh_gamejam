@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnradc7nwv22c"]
+
+[ext_resource type="Texture2D" uid="uid://bqasefgndnk1b" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_flat.png" id="1_ubi8s"]
+[ext_resource type="Texture2D" uid="uid://dknlb33divvli" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_line.png" id="2_atsmx"]
+[ext_resource type="FontFile" uid="uid://py6grmo4qw27" path="res://assets/fonts/Kenney Future Narrow.ttf" id="3_qljh2"]
+
+[node name="ActionUI" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ActionButton1" type="TextureButton" parent="."]
+self_modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 525.0
+offset_top = 328.0
+offset_right = 589.0
+offset_bottom = 392.0
+texture_normal = ExtResource("1_ubi8s")
+texture_pressed = ExtResource("2_atsmx")
+
+[node name="LblMessageAB1" type="RichTextLabel" parent="ActionButton1"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 14.0
+offset_right = 66.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_qljh2")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center][color=black]sit[/color][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ActionButton2" type="TextureButton" parent="."]
+self_modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 608.0
+offset_top = 260.0
+offset_right = 672.0
+offset_bottom = 324.0
+texture_normal = ExtResource("1_ubi8s")
+texture_pressed = ExtResource("2_atsmx")
+
+[node name="LblMessageAB2" type="RichTextLabel" parent="ActionButton2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 15.0
+offset_right = 65.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_qljh2")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center][color=black]act 2[/color][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ActionButton3" type="TextureButton" parent="."]
+self_modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 691.0
+offset_top = 328.0
+offset_right = 755.0
+offset_bottom = 392.0
+texture_normal = ExtResource("1_ubi8s")
+texture_pressed = ExtResource("2_atsmx")
+
+[node name="LblMessageAB3" type="RichTextLabel" parent="ActionButton3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 15.0
+offset_right = 65.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_qljh2")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center][color=black]act 3[/color][/center]"
+fit_content = true
+scroll_active = false

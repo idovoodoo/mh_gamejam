@@ -1,0 +1,136 @@
+[gd_scene load_steps=10 format=3 uid="uid://vkbhtruo53h5"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_fqllj"]
+[ext_resource type="Texture2D" uid="uid://ctirpvajsc5p0" path="res://assets/ui/kenney_ui-pack/uipack_rpg_sheet.png" id="1_hiac1"]
+[ext_resource type="Texture2D" uid="uid://bwer1o7ngggja" path="res://assets/characters/avatars/avatar1-test.png" id="2_rrtr7"]
+[ext_resource type="Theme" uid="uid://bagpxiwy8o2ep" path="res://new_theme.tres" id="3_8gwc8"]
+[ext_resource type="Texture2D" uid="uid://bptve1e5glwwx" path="res://assets/characters/avatars/avatar2-test.png" id="4_cjtif"]
+[ext_resource type="PackedScene" uid="uid://dwhrgnhnqalcw" path="res://scenes/time_ui.tscn" id="6_hv2wc"]
+[ext_resource type="PackedScene" uid="uid://dlrrlycc87pm" path="res://scenes/stats_ui.tscn" id="7_d0exg"]
+[ext_resource type="PackedScene" uid="uid://cnradc7nwv22c" path="res://scenes/action_ui.tscn" id="8_47t8f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h78aj"]
+resource_local_to_scene = true
+bg_color = Color(0.768627, 0.670588, 0, 1)
+corner_radius_top_left = 2
+corner_radius_bottom_left = 2
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqllj")
+self_thoughts_file = "res://dialogues/json/self_thoughts.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Dialogue"]
+self_modulate = Color(1, 1, 1, 0.545098)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = -190.0
+offset_right = -300.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hiac1")
+region_rect = Rect2(0, 331, 190, 45)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogue/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dialogue/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Avatar" type="TextureRect" parent="Dialogue/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_rrtr7")
+
+[node name="Message" type="RichTextLabel" parent="Dialogue/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_8gwc8")
+text = "here we go
+"
+scroll_active = false
+
+[node name="AvatarOther" type="TextureRect" parent="Dialogue/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_cjtif")
+
+[node name="DateTime" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TimeUI" parent="DateTime" instance=ExtResource("6_hv2wc")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 20.0
+offset_right = -135.0
+offset_bottom = 0.0
+grow_horizontal = 0
+
+[node name="Meters" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StatsUI" parent="Meters" instance=ExtResource("7_d0exg")]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.0
+offset_left = 25.0
+offset_top = 20.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="EnergyProgressBar" parent="Meters/StatsUI/EnergyIndicator" index="2"]
+theme_override_styles/fill = SubResource("StyleBoxFlat_h78aj")
+
+[node name="Actions" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ActionUI" parent="Actions" instance=ExtResource("8_47t8f")]
+
+[editable path="DateTime/TimeUI"]
+[editable path="Meters/StatsUI"]
+[editable path="Actions/ActionUI"]

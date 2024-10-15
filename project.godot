@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="3d-tests-godot"
+config/name="MH Gamejam"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://scripts/game_manager.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
+Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 
 [display]
 
@@ -27,12 +28,13 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg")
+enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
 "res://assets/": "red",
+"res://dialogues/": "teal",
 "res://resources/": "pink",
 "res://scenes/": "green",
 "res://scripts/": "yellow"

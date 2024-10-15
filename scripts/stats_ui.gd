@@ -6,6 +6,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("setting levels")
 	mh_progress_bar.value = GameManager.mh_level
 	energy_progress_bar.value = GameManager.energy_level
 	prod_progress_bar.value = GameManager.prod_level
@@ -28,6 +29,7 @@ func update_prod(_value) -> void:
 
 
 func _on_stat_system_mh_changed(_value) -> void:
+	print("update mh here" + str(_value))
 	update_mh(_value)
 
 

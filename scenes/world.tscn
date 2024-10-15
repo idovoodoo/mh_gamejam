@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=4 uid="uid://cd78fk6kiow6f"]
+[gd_scene load_steps=151 format=4 uid="uid://cd78fk6kiow6f"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_0qqsj"]
 [ext_resource type="PackedScene" uid="uid://dpujwin8t0kqa" path="res://scenes/camera_rig.tscn" id="1_6oawf"]
@@ -30,16 +30,11 @@
 [ext_resource type="PackedScene" uid="uid://6wvyr3kddkdt" path="res://assets/room_models/kitchenCabinetCornerRound.glb" id="23_opqa1"]
 [ext_resource type="PackedScene" uid="uid://vehxfd5jhi33" path="res://assets/room_models/kitchenCabinetCornerInner.glb" id="23_pelht"]
 [ext_resource type="PackedScene" uid="uid://dljqtibi2lkq5" path="res://assets/room_models/kitchenFridgeLarge.glb" id="24_hsa40"]
-[ext_resource type="Texture2D" uid="uid://bqasefgndnk1b" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_flat.png" id="25_23dnm"]
 [ext_resource type="PackedScene" uid="uid://dmuwre61qmsev" path="res://assets/room_models/kitchenStove.glb" id="25_r8pph"]
 [ext_resource type="PackedScene" uid="uid://ce5kdwk3xalj7" path="res://assets/room_models/kitchenCabinet.glb" id="26_4gr6g"]
-[ext_resource type="Texture2D" uid="uid://dknlb33divvli" path="res://assets/ui/kenney_ui-pack/PNG/Grey/Default/button_round_line.png" id="26_jq22q"]
-[ext_resource type="FontFile" uid="uid://py6grmo4qw27" path="res://assets/fonts/Kenney Future Narrow.ttf" id="26_nqrvb"]
 [ext_resource type="PackedScene" uid="uid://ciycjy2c17bia" path="res://assets/room_models/kitchenSink.glb" id="27_ssww3"]
-[ext_resource type="Texture2D" uid="uid://bwer1o7ngggja" path="res://assets/characters/avatars/avatar1-test.png" id="29_i7bpi"]
 [ext_resource type="PackedScene" uid="uid://cqbwsxrqmv87i" path="res://assets/room_models/kitchenBlender.glb" id="29_lu18e"]
 [ext_resource type="PackedScene" uid="uid://brq7fgh6i1yp8" path="res://assets/room_models/kitchenMicrowave.glb" id="30_aq8b4"]
-[ext_resource type="Texture2D" uid="uid://bptve1e5glwwx" path="res://assets/characters/avatars/avatar2-test.png" id="30_i16rx"]
 [ext_resource type="PackedScene" uid="uid://delem1y7yeo5c" path="res://assets/room_models/kitchenCoffeeMachine.glb" id="31_j5t7l"]
 [ext_resource type="PackedScene" uid="uid://cp0ggn618jptg" path="res://assets/room_models/washerDryerStacked.glb" id="32_bwsh3"]
 [ext_resource type="PackedScene" uid="uid://dmoypclok2fok" path="res://assets/room_models/toaster.glb" id="40_i5v2o"]
@@ -67,14 +62,11 @@
 [ext_resource type="Script" path="res://scripts/stats/stat_system.gd" id="64_iasr4"]
 [ext_resource type="Script" path="res://resources/MH_stat.gd" id="65_0y06i"]
 [ext_resource type="Shader" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="65_4t0h3"]
-[ext_resource type="FontFile" uid="uid://b0ysc270kn6oj" path="res://assets/fonts/Kenney Mini Square.ttf" id="66_he8xp"]
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="66_n200j"]
 [ext_resource type="Script" path="res://addons/simplegrasstextured/grass.gd" id="67_y2h62"]
-[ext_resource type="PackedScene" uid="uid://dwhrgnhnqalcw" path="res://scenes/time_ui.tscn" id="68_80na6"]
 [ext_resource type="Script" path="res://scripts/time/time_system.gd" id="68_sekvp"]
-[ext_resource type="Texture2D" uid="uid://ctirpvajsc5p0" path="res://assets/ui/kenney_ui-pack/uipack_rpg_sheet.png" id="69_2mn8x"]
 [ext_resource type="Script" path="res://scripts/time/date_time.gd" id="69_obf5y"]
-[ext_resource type="PackedScene" uid="uid://dlrrlycc87pm" path="res://scenes/stats_ui.tscn" id="72_micyi"]
+[ext_resource type="PackedScene" uid="uid://vkbhtruo53h5" path="res://scenes/ui.tscn" id="76_ybwqy"]
 
 [sub_resource type="Gradient" id="Gradient_45o76"]
 offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
@@ -432,7 +424,7 @@ effect_on_energy_scale = 1.0
 effect_on_prod = 20.0
 effect_on_prod_scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrad5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv8ml"]
 resource_local_to_scene = true
 bg_color = Color(0.768627, 0.670588, 0, 1)
 corner_radius_top_left = 2
@@ -1009,164 +1001,20 @@ rested_stat = SubResource("Resource_1b7lb")
 [node name="Player" parent="." instance=ExtResource("4_3l3i5")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.70135, 0.132454, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" parent="." instance=ExtResource("76_ybwqy")]
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="EnergyProgressBar" parent="UI/Meters/StatsUI/EnergyIndicator" index="2"]
+theme_override_styles/fill = SubResource("StyleBoxFlat_yv8ml")
 
-[node name="ActionUI" type="Control" parent="UI"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ActionButton1" type="TextureButton" parent="UI/ActionUI"]
-self_modulate = Color(1, 1, 1, 0.411765)
-layout_mode = 0
-offset_left = 525.0
-offset_top = 328.0
-offset_right = 589.0
-offset_bottom = 392.0
-texture_normal = ExtResource("25_23dnm")
-texture_pressed = ExtResource("26_jq22q")
-
-[node name="LblMessageAB1" type="RichTextLabel" parent="UI/ActionUI/ActionButton1"]
-layout_mode = 2
-offset_left = -1.0
-offset_top = 14.0
-offset_right = 66.0
-offset_bottom = 56.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("26_nqrvb")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "[center][color=black]sit[/color][/center]"
-fit_content = true
-scroll_active = false
-
-[node name="ActionButton2" type="TextureButton" parent="UI/ActionUI"]
-self_modulate = Color(1, 1, 1, 0.411765)
-layout_mode = 0
-offset_left = 608.0
-offset_top = 260.0
-offset_right = 672.0
-offset_bottom = 324.0
-texture_normal = ExtResource("25_23dnm")
-texture_pressed = ExtResource("26_jq22q")
-
-[node name="LblMessageAB2" type="RichTextLabel" parent="UI/ActionUI/ActionButton2"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 15.0
-offset_right = 65.0
-offset_bottom = 56.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("26_nqrvb")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "[center][color=black]act 2[/color][/center]"
-fit_content = true
-scroll_active = false
-
-[node name="ActionButton3" type="TextureButton" parent="UI/ActionUI"]
-self_modulate = Color(1, 1, 1, 0.411765)
-layout_mode = 0
-offset_left = 691.0
-offset_top = 328.0
-offset_right = 755.0
-offset_bottom = 392.0
-texture_normal = ExtResource("25_23dnm")
-texture_pressed = ExtResource("26_jq22q")
-
-[node name="LblMessageAB3" type="RichTextLabel" parent="UI/ActionUI/ActionButton3"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 15.0
-offset_right = 65.0
-offset_bottom = 56.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("26_nqrvb")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "[center][color=black]act 3[/color][/center]"
-fit_content = true
-scroll_active = false
-
-[node name="StoryUI" type="NinePatchRect" parent="UI"]
-self_modulate = Color(1, 1, 1, 0.266667)
-layout_mode = 0
-offset_left = 250.0
-offset_top = 550.0
-offset_right = 1050.0
-offset_bottom = 714.0
-texture = ExtResource("69_2mn8x")
-region_rect = Rect2(0, 331, 190, 45)
-patch_margin_left = 4
-patch_margin_top = 41
-patch_margin_right = 4
-patch_margin_bottom = 41
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/StoryUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/StoryUI/MarginContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/StoryUI/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Avatar" type="TextureRect" parent="UI/StoryUI/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("29_i7bpi")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/StoryUI/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/normal_font = ExtResource("66_he8xp")
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[color= black]Day 1 of the pandemic....
-what am i going to do today?"
-
-[node name="OtherAvatar" type="TextureRect" parent="UI/StoryUI/MarginContainer/VBoxContainer/HBoxContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("30_i16rx")
-
-[node name="TimeUI" parent="UI" instance=ExtResource("68_80na6")]
-offset_left = 1136.0
-offset_top = 30.0
-offset_right = 1245.0
-offset_bottom = 101.0
-
-[node name="StatsUI" parent="UI" instance=ExtResource("72_micyi")]
-layout_mode = 1
-offset_left = 38.0
-offset_top = 30.0
-offset_right = 38.0
-offset_bottom = 30.0
-
-[node name="EnergyProgressBar" parent="UI/StatsUI/EnergyIndicator" index="2"]
-theme_override_styles/fill = SubResource("StyleBoxFlat_wrad5")
-
-[connection signal="updated" from="DayNightCycle/TimeSystem" to="UI/TimeUI" method="_on_time_system_updated"]
-[connection signal="energy_changed" from="StatManager/StatSystem" to="UI/StatsUI" method="_on_stat_system_energy_changed"]
-[connection signal="mh_changed" from="StatManager/StatSystem" to="UI/StatsUI" method="_on_stat_system_mh_changed"]
-[connection signal="prod_changed" from="StatManager/StatSystem" to="UI/StatsUI" method="_on_stat_system_prod_changed"]
-[connection signal="pressed" from="UI/ActionUI/ActionButton1" to="Player" method="_on_action_button_1_pressed"]
-[connection signal="slow_down" from="UI/TimeUI" to="DayNightCycle/TimeSystem" method="_on_time_ui_slow_down"]
-[connection signal="speed_up" from="UI/TimeUI" to="DayNightCycle/TimeSystem" method="_on_time_ui_speed_up"]
+[connection signal="updated" from="DayNightCycle/TimeSystem" to="UI/DateTime/TimeUI" method="_on_time_system_updated"]
+[connection signal="energy_changed" from="StatManager/StatSystem" to="UI/Meters/StatsUI" method="_on_stat_system_energy_changed"]
+[connection signal="mh_changed" from="StatManager/StatSystem" to="UI/Meters/StatsUI" method="_on_stat_system_mh_changed"]
+[connection signal="prod_changed" from="StatManager/StatSystem" to="UI/Meters/StatsUI" method="_on_stat_system_prod_changed"]
+[connection signal="slow_down" from="UI/DateTime/TimeUI" to="DayNightCycle/TimeSystem" method="_on_time_ui_slow_down"]
+[connection signal="speed_up" from="UI/DateTime/TimeUI" to="DayNightCycle/TimeSystem" method="_on_time_ui_speed_up"]
+[connection signal="pressed" from="UI/Actions/ActionUI/ActionButton1" to="Player" method="_on_action_button_1_pressed"]
+[connection signal="pressed" from="UI/Actions/ActionUI/ActionButton2" to="Player" method="_on_action_button_2_pressed"]
+[connection signal="pressed" from="UI/Actions/ActionUI/ActionButton3" to="Player" method="_on_action_button_3_pressed"]
 
 [editable path="Map/House/Flooring/floorFullKitchen"]
 [editable path="Map/House/Flooring/floorFullBathroom"]
@@ -1208,5 +1056,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_wrad5")
 [editable path="Map/House/Walls/wall5"]
 [editable path="Map/House/Walls/wall6"]
 [editable path="Map/Outside/floorGrass"]
-[editable path="UI/TimeUI"]
-[editable path="UI/StatsUI"]
+[editable path="UI"]
+[editable path="UI/DateTime/TimeUI"]
+[editable path="UI/Meters/StatsUI"]
+[editable path="UI/Actions/ActionUI"]

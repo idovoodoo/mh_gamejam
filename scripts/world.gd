@@ -1,12 +1,12 @@
 extends Node3D
 
-@onready var action_ui: Control = $UI/ActionUI
-@onready var action_button_1: TextureButton = $UI/ActionUI/ActionButton1
-@onready var action_button_2: TextureButton = $UI/ActionUI/ActionButton2
-@onready var action_button_3: TextureButton = $UI/ActionUI/ActionButton3
-@onready var lbl_message_ab_1: RichTextLabel = $UI/ActionUI/ActionButton1/LblMessageAB1
-@onready var lbl_message_ab_2: RichTextLabel = $UI/ActionUI/ActionButton2/LblMessageAB2
-@onready var lbl_message_ab_3: RichTextLabel = $UI/ActionUI/ActionButton3/LblMessageAB3
+@onready var action_ui: Control = $UI/Actions/ActionUI
+@onready var action_button_1: TextureButton = $UI/Actions/ActionUI/ActionButton1
+@onready var action_button_2: TextureButton = $UI/Actions/ActionUI/ActionButton2
+@onready var action_button_3: TextureButton = $UI/Actions/ActionUI/ActionButton3
+@onready var lbl_message_ab_1: RichTextLabel = $UI/Actions/ActionUI/ActionButton1/LblMessageAB1
+@onready var lbl_message_ab_2: RichTextLabel = $UI/Actions/ActionUI/ActionButton2/LblMessageAB2
+@onready var lbl_message_ab_3: RichTextLabel = $UI/Actions/ActionUI/ActionButton3/LblMessageAB3
 
 var player: Player
 
@@ -86,4 +86,3 @@ func _on_player_action_at_lounge() -> void:
 	action_button_2.visible = true
 	action_button_3.visible = true
 	action_ui.visible = true
-	

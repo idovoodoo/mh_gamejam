@@ -116,9 +116,9 @@ func _on_action_button_1_pressed() -> void:
 		position = GameManager.desk_chair.sit_point.global_position
 		visuals.look_at(GameManager.desk_chair.look_point.global_position)
 		
-		#stat_system.add_anxiety_stat()
-		#STAT = StatSystem.MH_STAT.ANXIETY
-		#add_stat_text(STAT)
+		stat_system.add_anxiety_stat()
+		STAT = StatSystem.MH_STAT.ANXIETY
+		add_stat_text(STAT)
 		stat_system.add_social_stat()
 		STAT = StatSystem.MH_STAT.SOCIAL
 		add_stat_text(STAT)
@@ -153,3 +153,11 @@ func add_stat_text(_value: int) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	message_finished = true
+
+
+func _on_action_button_2_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_action_button_3_pressed() -> void:
+	pass # Replace with function body.

@@ -13,7 +13,7 @@ signal prod_changed
 @export var leisure_stat: MHStat
 @export var rested_stat: MHStat
 
-var mental_health_level: float = 0
+var mental_health_level: float = 20
 var energy_level: float = 100
 var productivity_level: float = 50
 
@@ -29,7 +29,7 @@ func add_anxiety_stat() -> void:
 	mental_health_level += anxiety_stat.effect_on_mh * anxiety_stat.effect_on_mh_scale
 	energy_level += anxiety_stat.effect_on_energy * anxiety_stat.effect_on_energy_scale
 	productivity_level += anxiety_stat.effect_on_prod * anxiety_stat.effect_on_prod_scale
-	
+
 	update_all()
 
 func add_depression_stat() -> void:
@@ -68,6 +68,7 @@ func add_rested_stat() -> void:
 	update_all()
 
 func update_all() -> void:
+	print("emitting signals")
 	mh_changed.emit(mental_health_level)
 	energy_changed.emit(energy_level)
 	prod_changed.emit(productivity_level)
